@@ -144,30 +144,30 @@ affiliate-app-project/
 tests first, then — only if those pass — build and deploy to Vercel via
 its CLI.
 
-**Two different places hold secrets, for two different reasons — both are
-required, and mixing them up is exactly what broke this the first time:**
+**GitHub Secrets are the single source of truth** for everything — nothing
+needs to be separately configured in Vercel's dashboard. Needs six
+repository secrets (GitHub repo → Settings → Secrets and variables →
+Actions):
 
-1. **GitHub Secrets** — only what the *workflow itself* needs to know
-   which Vercel project to talk to and with what authority:
-   - `VERCEL_TOKEN` — [vercel.com/account/tokens](https://vercel.com/account/tokens) → Create Token (scope: **Full Account**, not a specific team — a mismatched scope causes a "Project not found" error even with correct IDs)
-   - `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` — see below for how to get these correctly
-2. **Vercel's own Project → Settings → Environment Variables** — the
-   actual source of truth for everything the *running app* reads, whether
-   at build time or at request time:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
-   - `SUPABASE_SERVICE_ROLE_KEY`
+| Secret | Where it comes from |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Same page — the publishable key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Same page — the **secret** key (see ARCHITECTURE.md's "Stages 10–14" for why this is needed) |
+| `VERCEL_TOKEN` | [vercel.com/account/tokens](https://vercel.com/account/tokens) → Create Token (scope: **Full Account**, not a specific team — a mismatched scope causes a "Project not found" error even with correct IDs) |
+| `VERCEL_ORG_ID` | See below |
+| `VERCEL_PROJECT_ID` | See below |
 
-   This has to live here, not (only) in GitHub Secrets — the workflow's
-   `vercel pull` step fetches these from Vercel and writes them where
-   `vercel build` and the deployed function both read them from. A
-   runtime-only value like `SUPABASE_SERVICE_ROLE_KEY` set only in the
-   GitHub Actions shell during the build step never reaches the deployed
-   function's own runtime — this is exactly what caused the
-   `SUPABASE_SERVICE_ROLE_KEY is not set` error on the live site the first
-   time this was set up. Add them the same way you would in local
-   development, in Vercel's dashboard, and set them for the
-   **Production** environment at minimum.
+The workflow writes the three app secrets directly into the file
+`vercel build` reads (`.env.production.local`) on every run — that's
+what makes a runtime-only value like `SUPABASE_SERVICE_ROLE_KEY` actually
+reach the deployed function, not just the build step. (An earlier version
+of this workflow only exported these as the *build step's* shell
+environment, which inlines `NEXT_PUBLIC_*` into the client bundle
+correctly but does nothing for a value read at request time — that's what
+caused a `SUPABASE_SERVICE_ROLE_KEY is not set` error on the live site
+the first time this was set up. Fixed now — nothing needs to be
+configured in Vercel's dashboard for this to work.)
 
 Getting `VERCEL_ORG_ID` / `VERCEL_PROJECT_ID` right, the reliable way —
 either from the project's own Settings → General page and your
@@ -184,8 +184,8 @@ cat .vercel/project.json      # copy orgId and projectId from here
 `.vercel/` is already gitignored — never commit it, and don't paste its
 contents anywhere public.
 
-Once the two GitHub secrets + Vercel's three env vars all exist, any push
-to `main` deploys automatically — check the **Actions** tab on GitHub to
-watch it run. Still no real affiliate links after this — that's Stage 17,
+Once all six GitHub secrets exist, any push to `main` deploys
+automatically — check the **Actions** tab on GitHub to watch it run.
+Still no real affiliate links after this — that's Stage 17,
 after Stage 16 (custom
 domain).

@@ -40,21 +40,30 @@ jobs:
       - name: Install Vercel CLI
         run: npm install --global vercel@latest
 
-      # Fetches this project's Vercel config AND its Environment Variables
-      # (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY,
-      # SUPABASE_SERVICE_ROLE_KEY) from Vercel's own dashboard — Project →
-      # Settings → Environment Variables is the actual source of truth for
-      # anything the running app reads, at build time OR at request time.
-      # GitHub Secrets alone can't supply a runtime-only value like
-      # SUPABASE_SERVICE_ROLE_KEY (see lib/supabase/service.ts) — a value
-      # only present in *this workflow's* shell during `vercel build` never
-      # reaches the deployed function's own runtime environment. It has to
-      # be set on the Vercel project itself, which is what this step reads.
-      - name: Pull Vercel project settings + env vars
+      # Fetches this project's Vercel config (framework detection, build
+      # settings) using the org/project this repo is linked to.
+      - name: Pull Vercel project settings
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      # GitHub Secrets are the single source of truth for the app's own
+      # env vars — nothing needs to be separately configured in Vercel's
+      # dashboard. This writes them straight into the file `vercel build`
+      # reads: NEXT_PUBLIC_* get inlined into the client bundle, and
+      # (this is the part that actually matters) `vercel build` also bakes
+      # this file's values into the deployed function's own runtime
+      # config — which is what makes a runtime-only value like
+      # SUPABASE_SERVICE_ROLE_KEY (see lib/supabase/service.ts) actually
+      # reach the deployed function, not just the build step.
+      - name: Write app env vars from GitHub Secrets
+        run: |
+          cat > .env.production.local <<EOF
+          NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          EOF
 
       - name: Build
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
