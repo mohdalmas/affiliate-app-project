@@ -299,6 +299,21 @@ per-admin permission split yet, and none is needed for one person).
   properly instead of opting out. Run `npm run build` (not just `npm run
   dev`) after touching `/admin` — `next dev` doesn't do the static
   prerendering pass, so it won't catch this class of error.
+- **`app/[slug]/page.tsx` always shows "◐ Partial Prerender" in `next
+  build`'s output, even with `instant = false`** on both the page and
+  `app/[slug]/layout.tsx`. Confirmed this is just how Cache Components
+  labels any dynamic `[param]` route with no `generateStaticParams` (which
+  we deliberately don't define — landing page slugs are created
+  dynamically in the admin) — it is *not* evidence of the response being
+  wrongly cached; confirmed in production that each request gets a fresh
+  session cookie and correct per-slug content. One real, separate,
+  low-severity thing that comes with it: a `notFound()` call here can't
+  always force a genuine HTTP 404 once streaming has started — this is a
+  documented general Next.js limitation (not specific to this app; see
+  `node_modules/next/dist/docs/.../streaming.md`, "Status codes"),
+  mitigated by Next.js itself injecting a `noindex` meta tag so search
+  engines don't index a missing slug. A raw status-code check might still
+  see 200 instead of 404 — known, not chased further.
 - **`lib/supabase/proxy.ts` protects `/admin` only** (resolved at
   Stage 10 — it used to lock down everything except `/`, `/login*`,
   `/auth*`, which would have 404'd every real visitor at the login

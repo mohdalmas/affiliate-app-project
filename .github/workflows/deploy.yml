@@ -65,21 +65,6 @@ jobs:
             echo "SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}"
           } > .env.production.local
 
-      # Reveals whether each secret actually reached the Action, without
-      # ever printing its value — GitHub only masks an EXACT match to a
-      # registered secret, so a length or an 8-char prefix is safe to log.
-      # Remove this step once a deploy succeeds; it's a one-time diagnostic,
-      # not something that should stay in the pipeline long-term.
-      - name: Debug - verify secrets are actually present
-        run: |
-          echo "NEXT_PUBLIC_SUPABASE_URL length: ${#NEXT_PUBLIC_SUPABASE_URL} (starts with: ${NEXT_PUBLIC_SUPABASE_URL:0:8})"
-          echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY length: ${#NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}"
-          echo "SUPABASE_SERVICE_ROLE_KEY length: ${#SUPABASE_SERVICE_ROLE_KEY}"
-        env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-
       - name: Build
         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
