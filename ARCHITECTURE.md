@@ -85,7 +85,7 @@ send traffic, rather than months in advance.
 | **12 — `/go/[slug]` redirect** | The actual money path | `app/go/[slug]/route.ts` — look up product → active + `paid_traffic_allowed` offer → record `affiliate_click` → 302 to the Special Link (still a placeholder URL until Stage 17) |
 | **13 — Daily metrics** | Combine spend with results | `/admin/metrics` CRUD (`daily_metrics` per campaign per day); manual entry — Meta/Amazon report import is future work |
 | **14 — Analytics dashboard** | See what's working | `/admin/analytics` — profit by product/creative/audience (from `daily_metrics` via campaigns) + a view→click funnel (from `events`) |
-| **15 — Deploy** | Make it live | Vercel (Hobby/free tier), env vars, still placeholder affiliate links |
+| **15 — Deploy** | Make it live | GitHub Actions (`.github/workflows/deploy.yml`) → Vercel (Hobby/free tier) on every push to `main`, gated on lint+tests passing first — see README.md "Deploying"; still placeholder affiliate links |
 | **16 — Custom domain** | A real brand, not `*.vercel.app` | Buy `.com` at Cloudflare Registrar, point DNS at Vercel |
 | **17 — Compliance gate** | Don't skip this | Amazon Associates account approved **and** written confirmation of the exact flow (see above) **and** disclosure/privacy pages live **before** swapping in real Special Links |
 | **18 — First real Meta campaign** | Spend real money, on purpose | Only after Stage 17 is fully closed out |

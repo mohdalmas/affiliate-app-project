@@ -138,9 +138,40 @@ affiliate-app-project/
 └── README.md               # This file
 ```
 
-## Next stage
+## Deploying (Stage 15)
 
-**Stage 15 — Deploy.** Push to GitHub, deploy to Vercel (free Hobby
-tier), and set the same env vars there (including the service role key).
-Still no real affiliate links — that's Stage 17, after Stage 16 (custom
+`.github/workflows/deploy.yml` runs on every push to `main`: lint + unit
+tests first, then — only if those pass — build and deploy to Vercel via
+its CLI. This repo's own GitHub Secrets, not Vercel's dashboard, are the
+source of truth for the app's env vars, so the two never drift apart.
+
+Needs **six** repository secrets (GitHub repo → Settings → Secrets and
+variables → Actions):
+
+| Secret | Where it comes from |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase → Project Settings → API |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Same page — the publishable key |
+| `SUPABASE_SERVICE_ROLE_KEY` | Same page — the **secret** key (see ARCHITECTURE.md's "Stages 10–14" for why this is needed) |
+| `VERCEL_TOKEN` | [vercel.com/account/tokens](https://vercel.com/account/tokens) → Create Token |
+| `VERCEL_ORG_ID` | From `.vercel/project.json` after running `vercel link` locally once — see below |
+| `VERCEL_PROJECT_ID` | Same file, same step |
+
+One-time local setup to get the last two (only needs doing once, ever,
+not on every deploy):
+
+```bash
+npm install --global vercel   # if you don't already have it
+vercel login                  # opens a browser
+vercel link                   # answer the prompts; creates a new Vercel project
+cat .vercel/project.json      # copy orgId and projectId from here
+```
+
+`.vercel/` is already gitignored — never commit it, and don't paste its
+contents anywhere public. Add the two IDs as `VERCEL_ORG_ID` /
+`VERCEL_PROJECT_ID` secrets the same way you added the Supabase ones.
+
+Once all six secrets exist, any push to `main` deploys automatically —
+check the **Actions** tab on GitHub to watch it run. Still no real
+affiliate links after this — that's Stage 17, after Stage 16 (custom
 domain).
