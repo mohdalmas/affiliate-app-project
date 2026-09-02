@@ -3,22 +3,22 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { str, num } from "@/lib/admin/form-data";
+import { str, num, bool } from "@/lib/admin/form-data";
 
 function productPayload(formData: FormData) {
   return {
     name: str(formData, "name"),
     brand: str(formData, "brand"),
     category: str(formData, "category"),
-    subcategory: str(formData, "subcategory"),
-    product_url: str(formData, "product_url"),
-    image_url: str(formData, "image_url"),
     price: num(formData, "price"),
     currency: str(formData, "currency") ?? "INR",
-    rating: num(formData, "rating"),
-    review_count: num(formData, "review_count"),
-    status: str(formData, "status") ?? "research",
-    hypothesis: str(formData, "hypothesis"),
+    image_url: str(formData, "image_url"),
+    affiliate_url: str(formData, "affiliate_url"),
+    // Defaults to false — see ARCHITECTURE.md's compliance findings. Never
+    // flip this to true for a product you haven't actually confirmed
+    // allows paid Meta traffic.
+    paid_traffic_allowed: bool(formData, "paid_traffic_allowed"),
+    status: str(formData, "status") ?? "draft",
   };
 }
 
@@ -30,7 +30,7 @@ export async function createProduct(formData: FormData) {
   const { error } = await supabase.from("products").insert(payload);
   if (error) throw new Error(error.message);
 
-  revalidatePath("/admin/products");
+  revalidatePath("/admin", "layout");
   redirect("/admin/products");
 }
 
@@ -45,7 +45,7 @@ export async function updateProduct(id: string, formData: FormData) {
     .eq("id", id);
   if (error) throw new Error(error.message);
 
-  revalidatePath("/admin/products");
+  revalidatePath("/admin", "layout");
   redirect("/admin/products");
 }
 
@@ -54,5 +54,8 @@ export async function deleteProduct(id: string) {
   const { error } = await supabase.from("products").delete().eq("id", id);
   if (error) throw new Error(error.message);
 
-  revalidatePath("/admin/products");
+  revalidatePath("/admin", "layout");
 }
+
+// Bulk create/update via CSV — see lib/admin/combined-import-action.ts
+// (shared with Landing pages, since one CSV covers both entities together).

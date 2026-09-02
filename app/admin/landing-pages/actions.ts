@@ -9,7 +9,6 @@ function landingPagePayload(formData: FormData) {
   return {
     name: str(formData, "name"),
     slug: str(formData, "slug"),
-    page_type: str(formData, "page_type") ?? "product",
     product_id: str(formData, "product_id"),
     status: str(formData, "status") ?? "draft",
   };
@@ -29,22 +28,22 @@ function friendlyError(error: { code?: string; message: string }): Error {
 
 export async function createLandingPage(formData: FormData) {
   const payload = landingPagePayload(formData);
-  if (!payload.name || !payload.slug) {
-    throw new Error("Name and slug are required");
+  if (!payload.name || !payload.slug || !payload.product_id) {
+    throw new Error("Name, slug, and product are required");
   }
 
   const supabase = await createClient();
   const { error } = await supabase.from("landing_pages").insert(payload);
   if (error) throw friendlyError(error);
 
-  revalidatePath("/admin/landing-pages");
+  revalidatePath("/admin", "layout");
   redirect("/admin/landing-pages");
 }
 
 export async function updateLandingPage(id: string, formData: FormData) {
   const payload = landingPagePayload(formData);
-  if (!payload.name || !payload.slug) {
-    throw new Error("Name and slug are required");
+  if (!payload.name || !payload.slug || !payload.product_id) {
+    throw new Error("Name, slug, and product are required");
   }
 
   const supabase = await createClient();
@@ -54,7 +53,7 @@ export async function updateLandingPage(id: string, formData: FormData) {
     .eq("id", id);
   if (error) throw friendlyError(error);
 
-  revalidatePath("/admin/landing-pages");
+  revalidatePath("/admin", "layout");
   redirect("/admin/landing-pages");
 }
 
@@ -63,5 +62,8 @@ export async function deleteLandingPage(id: string) {
   const { error } = await supabase.from("landing_pages").delete().eq("id", id);
   if (error) throw new Error(error.message);
 
-  revalidatePath("/admin/landing-pages");
+  revalidatePath("/admin", "layout");
 }
+
+// Bulk create/update via CSV — see lib/admin/combined-import-action.ts
+// (shared with Products, since one CSV covers both entities together).

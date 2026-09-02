@@ -48,14 +48,18 @@ export async function updateSession(request: NextRequest) {
   const { data } = await supabase.auth.getClaims();
   const user = data?.claims;
 
-  // Stage 10: only /admin is admin-only. Everything else (the public
-  // product/collection pages, /go/[slug], /auth/*, /privacy, etc.) is
-  // reachable without logging in — a Meta ad has to be able to land a
-  // stranger on these pages. This replaced an earlier "block everything
-  // except a few paths" rule that would have 404'd every real visitor at
-  // the login screen; see ARCHITECTURE.md's cautions.
+  // Stage 10: /admin (and /preview, added later for admin-only draft
+  // previews) is admin-only. Everything else (the public product pages,
+  // /go/[slug], /auth/*, /privacy, etc.) is reachable without logging in —
+  // a Meta ad has to be able to land a stranger on these pages. This
+  // replaced an earlier "block everything except a few paths" rule that
+  // would have 404'd every real visitor at the login screen; see
+  // ARCHITECTURE.md's cautions.
+  const isAdminOnly =
+    request.nextUrl.pathname.startsWith("/admin") ||
+    request.nextUrl.pathname.startsWith("/preview");
   let response = supabaseResponse;
-  if (request.nextUrl.pathname.startsWith("/admin") && !user) {
+  if (isAdminOnly && !user) {
     const url = request.nextUrl.clone();
     url.pathname = "/auth/login";
     response = NextResponse.redirect(url);

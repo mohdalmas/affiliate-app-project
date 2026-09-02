@@ -6,7 +6,7 @@ type ProductGridEntry = {
   name: string;
   // Supabase-js infers embedded to-one relations as arrays without
   // generated DB types — this is actually always a single object (or
-  // null), guaranteed by product_id being a plain foreign key.
+  // null), guaranteed by product_id being a required, plain foreign key.
   product: {
     name: string;
     price: number | null;
@@ -15,27 +15,16 @@ type ProductGridEntry = {
   } | null;
 };
 
-// Shared between the homepage and any "collection"-type landing page —
-// both show the same grid of every published product page. Kept in one
-// place so the two can't quietly drift apart.
-export async function ProductGrid({
-  excludeLandingPageId,
-}: {
-  excludeLandingPageId?: string;
-}) {
+// The homepage's product grid: every Live landing page whose product is
+// also Live.
+export async function ProductGrid() {
   const supabase = createServiceClient();
-  let query = supabase
+  const { data } = await supabase
     .from("landing_pages")
-    .select("slug, name, product:products(name, price, currency, image_url)")
-    .eq("page_type", "product")
-    .eq("status", "published")
+    .select("slug, name, product:products!inner(name, price, currency, image_url)")
+    .eq("status", "live")
+    .eq("product.status", "live")
     .order("created_at", { ascending: false });
-
-  if (excludeLandingPageId) {
-    query = query.neq("id", excludeLandingPageId);
-  }
-
-  const { data } = await query;
   const pages = data as unknown as ProductGridEntry[] | null;
 
   if (!pages?.length) {

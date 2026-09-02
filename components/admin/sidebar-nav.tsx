@@ -8,14 +8,8 @@ const NAV_ITEMS = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/help", label: "Help & workflow" },
   { href: "/admin/products", label: "Products" },
-  { href: "/admin/offers", label: "Offers" },
-  { href: "/admin/audiences", label: "Audiences" },
-  { href: "/admin/creatives", label: "Creatives" },
-  { href: "/admin/campaigns", label: "Campaigns" },
-  { href: "/admin/experiments", label: "Experiments" },
   { href: "/admin/landing-pages", label: "Landing pages" },
-  { href: "/admin/metrics", label: "Metrics" },
-  { href: "/admin/analytics", label: "Analytics" },
+  { href: "/admin/import-export", label: "Import / Export" },
 ];
 
 export function SidebarNav() {

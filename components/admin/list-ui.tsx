@@ -10,7 +10,7 @@ export function SectionHeader({
 }: {
   title: string;
   description?: string;
-  addHref: string;
+  addHref?: string;
   addLabel?: string;
 }) {
   return (
@@ -23,9 +23,11 @@ export function SectionHeader({
           </p>
         )}
       </div>
-      <Button asChild size="sm" className="shrink-0">
-        <Link href={addHref}>{addLabel}</Link>
-      </Button>
+      {addHref && (
+        <Button asChild size="sm" className="shrink-0">
+          <Link href={addHref}>{addLabel}</Link>
+        </Button>
+      )}
     </div>
   );
 }

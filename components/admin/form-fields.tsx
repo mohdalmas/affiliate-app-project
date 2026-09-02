@@ -1,8 +1,7 @@
-// Small, shared form pieces so every admin form (Products, Offers,
-// Audiences, Creatives, Campaigns, Experiments) looks the same and doesn't
-// repeat the same <Label>+<Input> markup 40 times. These are plain Server
-// Components — no "use client" needed, since a <form action={serverAction}>
-// works without any client-side JavaScript.
+// Small, shared form pieces so every admin form (Products, Landing pages)
+// looks the same and doesn't repeat the same <Label>+<Input> markup. These
+// are plain Server Components — no "use client" needed, since a
+// <form action={serverAction}> works without any client-side JavaScript.
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 

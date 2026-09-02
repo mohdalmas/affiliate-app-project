@@ -1,19 +1,12 @@
 import "server-only";
 import { createServiceClient } from "@/lib/supabase/service";
 
-export type EventType =
-  | "landing_view"
-  | "product_view"
-  | "affiliate_click"
-  | "redirect";
+export type EventType = "product_view" | "affiliate_click";
 
 export type RecordEventInput = {
   event_type: EventType;
   session_id?: string | null;
   product_id?: string | null;
-  campaign_id?: string | null;
-  creative_id?: string | null;
-  audience_id?: string | null;
   landing_page_id?: string | null;
   utm_source?: string | null;
   utm_medium?: string | null;
@@ -39,12 +32,10 @@ export async function recordEvent(input: RecordEventInput): Promise<void> {
   }
 }
 
-// Pulls the standard UTM params (plus our own campaign/creative/audience
-// ids, for when an ad URL includes them directly) off any URL's search
-// params — used by both the public page views and the /go/[slug] redirect
-// so a Meta ad URL like
-// yourdomain.com/trimmer-a?utm_source=meta&campaign_id=<uuid>
-// gets captured the same way in both places.
+// Pulls the standard UTM params off any URL's search params — used by
+// both the public page view and the /go/[slug] redirect so a Meta ad URL
+// like yourdomain.com/trimmer-a?utm_source=meta gets captured the same
+// way in both places.
 export function utmParamsFrom(searchParams: URLSearchParams) {
   return {
     utm_source: searchParams.get("utm_source"),
@@ -52,8 +43,5 @@ export function utmParamsFrom(searchParams: URLSearchParams) {
     utm_campaign: searchParams.get("utm_campaign"),
     utm_content: searchParams.get("utm_content"),
     utm_term: searchParams.get("utm_term"),
-    campaign_id: searchParams.get("campaign_id"),
-    creative_id: searchParams.get("creative_id"),
-    audience_id: searchParams.get("audience_id"),
   };
 }

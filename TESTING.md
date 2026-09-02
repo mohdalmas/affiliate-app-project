@@ -73,17 +73,58 @@ Supabase project, an authenticated browser session, and cleanup after
 each run, which is more infrastructure than this project needs yet. Until
 then, manually click through:
 
-- [ ] For each of Products / Offers / Audiences / Creatives / Campaigns /
-      Experiments / Landing pages / Metrics: add one, edit it, delete it.
+- [ ] For each of Products / Landing pages: add one, edit it, delete it.
       Confirm the list updates each time.
+- [ ] After editing a row, click **Edit** on that same row *again* — it
+      should show the value you just saved, not the old one. If it shows
+      stale data, a `revalidatePath()` call somewhere is too narrow (this
+      exact bug happened once: `revalidatePath("/admin/products")` only
+      invalidated the list, not `/admin/products/[id]/edit`'s own cached
+      copy — fixed by revalidating the whole `/admin` layout instead of
+      one specific path).
 - [ ] Try submitting a form with a required field empty — it should be
       blocked by the browser (a red outline / "please fill this field"),
       never reach the server and crash. If you ever see the Next.js error
       overlay from a form submission, that's a real bug — a required
       field's `TextField`/`TextAreaField`/`SelectField` is missing its
       `required` prop somewhere (this exact bug happened once with
-      Experiments' Hypothesis field — fixed, but the class of bug is worth
-      knowing about).
+      Experiments' Hypothesis field, back before the simplification —
+      fixed, but the class of bug is worth knowing about).
 - [ ] The full walkthrough in `app/admin/help/page.tsx` (Product →
-      Offer → Landing page → visit the public page → click "Get the
-      deal" → check Analytics).
+      Landing page → visit the public page → click "Get the deal" →
+      check the Dashboard).
+- [ ] Bulk CSV import/export — one combined file covers Products and
+      Landing pages together now (`lib/admin/combined-csv.ts`), and lives
+      on its own **Import / Export** tab in the sidebar (not on the
+      Products/Landing pages list pages anymore). Click **Export CSV**,
+      open it in Excel: edit a row's price/status, add a new row with every
+      `*_id` column blank and a `landing_page_slug` filled in (to create a
+      product *and* its landing page together), and add another new row
+      with `landing_page_slug` left blank (product-only). Save, **Import
+      CSV** that file back. Confirm: the edited row updated, the two new
+      rows appeared in the right lists (one with a landing page, one
+      without), and the summary banner's four counts (products/landing
+      pages × created/updated) match what you expected. Also try
+      `sample-data/products-and-landing-pages-sample-20.csv` (quick smoke
+      test) or `sample-data/products-and-landing-pages-sample-200.csv`
+      (bigger batch, also exercises pagination below — every 5th row is
+      product-only, on purpose). This one's on you to click through —
+      unlike the rest of this checklist, it needs a real logged-in browser
+      session to upload a file, which can't be scripted the way the
+      database checks elsewhere in this project were.
+- [ ] Pagination + search on the Products and Landing pages tables —
+      import the 200-row sample above, then on each list page: type in the
+      search box (filters by name/brand/category for Products, name/slug
+      for Landing pages, after a short debounce) and confirm the "Loading…"
+      indicator briefly shows and the URL gets a `?q=...`; change "Rows per
+      page" between 10/50/100 and confirm the row count and the URL's
+      `?pageSize=...` both update; click Previous/Next and confirm the
+      "Showing X–Y of Z" text tracks correctly and the buttons disable at
+      the first/last page.
+- [ ] Loading states — every button that submits a form (Create/Save
+      product or landing page, Import CSV) should visibly change to a
+      "…ing" label and disable itself while the request is in flight
+      (`components/admin/submit-button.tsx`); Delete already showed
+      "Deleting…" before this. Clicking between admin sidebar links should
+      briefly show a spinner (`app/admin/loading.tsx`) if the next page
+      takes a moment to load.

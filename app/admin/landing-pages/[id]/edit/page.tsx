@@ -3,16 +3,13 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { TextField, SelectField } from "@/components/admin/form-fields";
 import { HelpPanel, FormLayout } from "@/components/admin/help-panel";
+import { SubmitButton } from "@/components/admin/submit-button";
 import { createClient } from "@/lib/supabase/server";
 import { getProductOptions } from "@/lib/admin/options";
 import { updateLandingPage } from "../../actions";
 import { LANDING_PAGE_HELP_DESCRIPTION, LANDING_PAGE_HELP_FIELDS } from "../../help";
 
-const PAGE_TYPE_OPTIONS = ["product", "collection", "comparison"].map((value) => ({
-  value,
-  label: value,
-}));
-const STATUS_OPTIONS = ["draft", "published", "archived"].map((value) => ({
+const STATUS_OPTIONS = ["draft", "live", "archived"].map((value) => ({
   value,
   label: value,
 }));
@@ -41,22 +38,16 @@ export default async function EditLandingPagePage({
           <TextField name="name" label="Name" defaultValue={landingPage.name} required />
           <TextField name="slug" label="Slug" defaultValue={landingPage.slug} required />
           <SelectField
-            name="page_type"
-            label="Page type"
-            defaultValue={landingPage.page_type}
-            options={PAGE_TYPE_OPTIONS}
-            required
-          />
-          <SelectField
             name="product_id"
             label="Product"
             defaultValue={landingPage.product_id}
             options={productOptions}
-            emptyLabel="— none —"
+            required
+            emptyLabel="Select a product…"
           />
           <SelectField name="status" label="Status" defaultValue={landingPage.status} options={STATUS_OPTIONS} required />
           <div className="flex gap-2">
-            <Button type="submit">Save changes</Button>
+            <SubmitButton pendingText="Saving…">Save changes</SubmitButton>
             <Button asChild variant="outline">
               <Link href="/admin/landing-pages">Cancel</Link>
             </Button>

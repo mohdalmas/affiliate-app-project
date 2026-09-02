@@ -41,6 +41,7 @@ const CHECKS = [
   { path: "/admin/campaigns", expect: 307 },
   { path: "/admin/experiments", expect: 307 },
   { path: "/admin/landing-pages", expect: 307 },
+  { path: "/admin/import-export", expect: 307 },
   { path: "/admin/metrics", expect: 307 },
   { path: "/admin/analytics", expect: 307 },
 ];

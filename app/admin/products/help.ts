@@ -1,15 +1,12 @@
-// Shared between new/page.tsx and [id]/edit/page.tsx so the field
-// explanations in the HelpPanel don't drift between "add" and "edit".
 export const PRODUCT_HELP_DESCRIPTION =
-  "A product is anything you're considering promoting — added here before you have an approved affiliate offer for it. Nothing is required except a name, and you can edit it later.";
+  "A product is one thing you're promoting — its affiliate link and the compliance flag live directly here, no separate Offer to manage.";
 
 export const PRODUCT_HELP_FIELDS = [
-  { name: "Name", help: "Required. What you'd call it internally, e.g. “Philips Beard Trimmer”." },
-  { name: "Brand", help: "Optional manufacturer/brand name." },
-  { name: "Category / Subcategory", help: "Optional grouping, e.g. “Mens Grooming” / “Beard Trimmer”." },
-  { name: "Price / Currency", help: "What it sells for — for your own reference; nothing calculates from this yet." },
-  { name: "Rating / Review count", help: "Optional, copied from wherever you found it (Amazon listing, etc.) — a rough signal of demand." },
-  { name: "Product URL / Image URL", help: "Optional links to the original listing/photo, for your own reference." },
-  { name: "Status", help: "Where it is in your pipeline: research → shortlisted → testing → winner, or killed/archived if you drop it." },
-  { name: "Hypothesis", help: "Why you think this product could work — which audience, which angle." },
+  { name: "Name", help: "Required. What you'd call it, e.g. “Philips Beard Trimmer”." },
+  { name: "Brand / Category", help: "Optional, just for your own reference." },
+  { name: "Price / Currency", help: "What it sells for — defaults to INR." },
+  { name: "Image URL", help: "Optional link to a product photo, shown on its public page." },
+  { name: "Affiliate URL", help: "The real tracked link. Use https://example.com as a placeholder until Stage 17 in ARCHITECTURE.md is fully closed out." },
+  { name: "Paid traffic allowed", help: "Leave this OFF until you've actually confirmed, in writing from Amazon Associates support, that Meta ads are allowed for this product. This is the real safety switch — see ARCHITECTURE.md's compliance findings. /go/[slug] will refuse to redirect while this is off." },
+  { name: "Status", help: "Draft: hidden everywhere. Live: shows up on the homepage and any Landing page pointing at it. Archived: hidden again, without deleting it." },
 ];
