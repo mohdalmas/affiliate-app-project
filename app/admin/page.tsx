@@ -5,7 +5,11 @@ import Link from "next/link";
 
 import { createClient } from "@/lib/supabase/server";
 import { buildDashboardRows } from "@/lib/admin/dashboard-stats";
-import { StatusBadge } from "@/components/admin/list-ui";
+import { PieChart } from "@/components/admin/pie-chart";
+
+// See the matching comment in app/admin/products/page.tsx — same reasoning
+// (Welcome/Stats below both read live, uncached, session-keyed data).
+export const instant = false;
 
 async function Welcome() {
   const supabase = await createClient();
@@ -24,7 +28,9 @@ async function Stats() {
   const supabase = await createClient();
   const [{ data: products, error: productsError }, { data: events, error: eventsError }] =
     await Promise.all([
-      supabase.from("products").select("id, name, status"),
+      supabase
+        .from("products")
+        .select("id, name, status, price, commission_percentage"),
       supabase.from("events").select("product_id, event_type"),
     ]);
 
@@ -67,10 +73,31 @@ async function Stats() {
   const rows = buildDashboardRows(liveProducts, events ?? []);
   const totalViews = rows.reduce((sum, r) => sum + r.views, 0);
   const totalClicks = rows.reduce((sum, r) => sum + r.clicks, 0);
+  const totalEstimatedCommission = rows.reduce(
+    (sum, r) => sum + (r.estimatedCommission ?? 0),
+    0,
+  );
+  const anyCommissionSet = rows.some((r) => r.estimatedCommission != null);
+
+  // Pie chart of clicks by product — the one number we actually track for
+  // real, so it's the honest thing to visualize. Falls back to views when
+  // nobody's clicked yet, so the chart isn't just empty on day one.
+  const clicksTotal = rows.reduce((sum, r) => sum + r.clicks, 0);
+  const chartByClicks = clicksTotal > 0;
+  const chartData = rows
+    .filter((r) => (chartByClicks ? r.clicks > 0 : r.views > 0))
+    .map((r) => ({
+      label: r.name,
+      value: chartByClicks ? r.clicks : r.views,
+      detail:
+        r.commission_percentage != null
+          ? `${r.commission_percentage}% commission`
+          : undefined,
+    }));
 
   return (
-    <div className="flex flex-col gap-4">
-      <div className="flex gap-6">
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-wrap gap-6">
         <div>
           <div className="text-2xl font-bold">{totalViews}</div>
           <div className="text-xs text-muted-foreground">Total views</div>
@@ -79,35 +106,36 @@ async function Stats() {
           <div className="text-2xl font-bold">{totalClicks}</div>
           <div className="text-xs text-muted-foreground">Total affiliate clicks</div>
         </div>
+        <div>
+          <div className="text-2xl font-bold">
+            {anyCommissionSet ? `~₹${totalEstimatedCommission.toFixed(0)}` : "—"}
+          </div>
+          <div className="text-xs text-muted-foreground">
+            Estimated commission (best case)
+          </div>
+        </div>
       </div>
 
-      <div className="overflow-x-auto border rounded-md">
-        <table className="w-full text-sm">
-          <thead className="bg-muted/50 text-left">
-            <tr>
-              <th className="p-3 font-medium">Product</th>
-              <th className="p-3 font-medium">Status</th>
-              <th className="p-3 font-medium">Views</th>
-              <th className="p-3 font-medium">Clicks</th>
-              <th className="p-3 font-medium">Click rate</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr key={row.id} className="border-t">
-                <td className="p-3 font-medium">{row.name}</td>
-                <td className="p-3">
-                  <StatusBadge status={row.status} />
-                </td>
-                <td className="p-3 text-muted-foreground">{row.views}</td>
-                <td className="p-3 text-muted-foreground">{row.clicks}</td>
-                <td className="p-3 text-muted-foreground">
-                  {row.clickRate != null ? `${(row.clickRate * 100).toFixed(1)}%` : "—"}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {!anyCommissionSet && (
+        <p className="text-xs text-muted-foreground -mt-4">
+          Set a Commission % on a product to see an estimate here — edit any
+          product and fill in the Commission box.
+        </p>
+      )}
+
+      <div className="flex flex-col gap-2">
+        <h2 className="font-medium text-sm">
+          {chartByClicks ? "Affiliate clicks by product" : "Views by product"}
+        </h2>
+        <PieChart
+          data={chartData}
+          valueFormat={(v) => `${v} ${chartByClicks ? "clicks" : "views"}`}
+        />
+        <p className="text-xs text-muted-foreground">
+          Estimates only — assumes every click converts at the product&apos;s
+          listed commission %, which real sales almost never do. Amazon
+          doesn&apos;t expose actual per-sale commission via API.
+        </p>
       </div>
     </div>
   );

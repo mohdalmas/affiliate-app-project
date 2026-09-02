@@ -18,6 +18,10 @@ not needed yet, not worth the extra setup for a couple of migrations.)
    [`migrations/0003_fix_landing_page_delete.sql`](migrations/0003_fix_landing_page_delete.sql) —
    fixes a real bug `0002` introduced (deleting a product with a landing
    page would crash instead of cleanly removing both)
+6. **New query** again, do the same with
+   [`migrations/0004_add_commission.sql`](migrations/0004_add_commission.sql) —
+   adds `commission_percentage`/`commission_notes` to `products`, used by
+   the Dashboard's estimated-commission pie chart
 
 If a step errors, stop and paste the exact error back — don't re-run it
 (some statements, like `create table`, fail loudly instead of silently if

@@ -19,6 +19,8 @@ function productPayload(formData: FormData) {
     // allows paid Meta traffic.
     paid_traffic_allowed: bool(formData, "paid_traffic_allowed"),
     status: str(formData, "status") ?? "draft",
+    commission_percentage: num(formData, "commission_percentage"),
+    commission_notes: str(formData, "commission_notes"),
   };
 }
 

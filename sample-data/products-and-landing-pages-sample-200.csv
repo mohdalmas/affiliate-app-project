@@ -1,201 +1,201 @@
-product_id,product_name,product_brand,product_category,product_price,product_currency,product_image_url,product_affiliate_url,product_paid_traffic_allowed,product_status,landing_page_id,landing_page_name,landing_page_slug,landing_page_status
-,Sample Product 1,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0001,FALSE,draft,,,sample-product-1,draft
-,Sample Product 2,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0002,FALSE,archived,,,sample-product-2,draft
-,Sample Product 3,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0003,TRUE,live,,,sample-product-3,live
-,Sample Product 4,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0004,FALSE,draft,,,sample-product-4,draft
-,Sample Product 5,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0005,FALSE,archived,,,,
-,Sample Product 6,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0006,TRUE,live,,,sample-product-6,live
-,Sample Product 7,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0007,FALSE,draft,,,sample-product-7,draft
-,Sample Product 8,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0008,FALSE,archived,,,sample-product-8,draft
-,Sample Product 9,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0009,TRUE,live,,,sample-product-9,live
-,Sample Product 10,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0010,FALSE,draft,,,,
-,Sample Product 11,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0011,FALSE,archived,,,sample-product-11,draft
-,Sample Product 12,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0012,TRUE,live,,,sample-product-12,live
-,Sample Product 13,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0013,FALSE,draft,,,sample-product-13,draft
-,Sample Product 14,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0014,FALSE,archived,,,sample-product-14,draft
-,Sample Product 15,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0015,TRUE,live,,,,
-,Sample Product 16,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0016,FALSE,draft,,,sample-product-16,draft
-,Sample Product 17,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0017,FALSE,archived,,,sample-product-17,draft
-,Sample Product 18,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0018,TRUE,live,,,sample-product-18,live
-,Sample Product 19,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0019,FALSE,draft,,,sample-product-19,draft
-,Sample Product 20,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0020,FALSE,archived,,,,
-,Sample Product 21,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0021,TRUE,live,,,sample-product-21,live
-,Sample Product 22,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0022,FALSE,draft,,,sample-product-22,draft
-,Sample Product 23,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0023,FALSE,archived,,,sample-product-23,draft
-,Sample Product 24,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0024,TRUE,live,,,sample-product-24,live
-,Sample Product 25,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0025,FALSE,draft,,,,
-,Sample Product 26,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0026,FALSE,archived,,,sample-product-26,draft
-,Sample Product 27,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0027,TRUE,live,,,sample-product-27,live
-,Sample Product 28,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0028,FALSE,draft,,,sample-product-28,draft
-,Sample Product 29,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0029,FALSE,archived,,,sample-product-29,draft
-,Sample Product 30,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0030,TRUE,live,,,,
-,Sample Product 31,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0031,FALSE,draft,,,sample-product-31,draft
-,Sample Product 32,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0032,FALSE,archived,,,sample-product-32,draft
-,Sample Product 33,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0033,TRUE,live,,,sample-product-33,live
-,Sample Product 34,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0034,FALSE,draft,,,sample-product-34,draft
-,Sample Product 35,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0035,FALSE,archived,,,,
-,Sample Product 36,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0036,TRUE,live,,,sample-product-36,live
-,Sample Product 37,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0037,FALSE,draft,,,sample-product-37,draft
-,Sample Product 38,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0038,FALSE,archived,,,sample-product-38,draft
-,Sample Product 39,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0039,TRUE,live,,,sample-product-39,live
-,Sample Product 40,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0040,FALSE,draft,,,,
-,Sample Product 41,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0041,FALSE,archived,,,sample-product-41,draft
-,Sample Product 42,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0042,TRUE,live,,,sample-product-42,live
-,Sample Product 43,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0043,FALSE,draft,,,sample-product-43,draft
-,Sample Product 44,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0044,FALSE,archived,,,sample-product-44,draft
-,Sample Product 45,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0045,TRUE,live,,,,
-,Sample Product 46,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0046,FALSE,draft,,,sample-product-46,draft
-,Sample Product 47,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0047,FALSE,archived,,,sample-product-47,draft
-,Sample Product 48,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0048,TRUE,live,,,sample-product-48,live
-,Sample Product 49,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0049,FALSE,draft,,,sample-product-49,draft
-,Sample Product 50,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0050,FALSE,archived,,,,
-,Sample Product 51,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0051,TRUE,live,,,sample-product-51,live
-,Sample Product 52,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0052,FALSE,draft,,,sample-product-52,draft
-,Sample Product 53,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0053,FALSE,archived,,,sample-product-53,draft
-,Sample Product 54,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0054,TRUE,live,,,sample-product-54,live
-,Sample Product 55,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0055,FALSE,draft,,,,
-,Sample Product 56,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0056,FALSE,archived,,,sample-product-56,draft
-,Sample Product 57,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0057,TRUE,live,,,sample-product-57,live
-,Sample Product 58,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0058,FALSE,draft,,,sample-product-58,draft
-,Sample Product 59,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0059,FALSE,archived,,,sample-product-59,draft
-,Sample Product 60,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0060,TRUE,live,,,,
-,Sample Product 61,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0061,FALSE,draft,,,sample-product-61,draft
-,Sample Product 62,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0062,FALSE,archived,,,sample-product-62,draft
-,Sample Product 63,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0063,TRUE,live,,,sample-product-63,live
-,Sample Product 64,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0064,FALSE,draft,,,sample-product-64,draft
-,Sample Product 65,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0065,FALSE,archived,,,,
-,Sample Product 66,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0066,TRUE,live,,,sample-product-66,live
-,Sample Product 67,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0067,FALSE,draft,,,sample-product-67,draft
-,Sample Product 68,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0068,FALSE,archived,,,sample-product-68,draft
-,Sample Product 69,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0069,TRUE,live,,,sample-product-69,live
-,Sample Product 70,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0070,FALSE,draft,,,,
-,Sample Product 71,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0071,FALSE,archived,,,sample-product-71,draft
-,Sample Product 72,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0072,TRUE,live,,,sample-product-72,live
-,Sample Product 73,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0073,FALSE,draft,,,sample-product-73,draft
-,Sample Product 74,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0074,FALSE,archived,,,sample-product-74,draft
-,Sample Product 75,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0075,TRUE,live,,,,
-,Sample Product 76,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0076,FALSE,draft,,,sample-product-76,draft
-,Sample Product 77,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0077,FALSE,archived,,,sample-product-77,draft
-,Sample Product 78,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0078,TRUE,live,,,sample-product-78,live
-,Sample Product 79,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0079,FALSE,draft,,,sample-product-79,draft
-,Sample Product 80,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0080,FALSE,archived,,,,
-,Sample Product 81,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0081,TRUE,live,,,sample-product-81,live
-,Sample Product 82,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0082,FALSE,draft,,,sample-product-82,draft
-,Sample Product 83,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0083,FALSE,archived,,,sample-product-83,draft
-,Sample Product 84,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0084,TRUE,live,,,sample-product-84,live
-,Sample Product 85,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0085,FALSE,draft,,,,
-,Sample Product 86,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0086,FALSE,archived,,,sample-product-86,draft
-,Sample Product 87,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0087,TRUE,live,,,sample-product-87,live
-,Sample Product 88,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0088,FALSE,draft,,,sample-product-88,draft
-,Sample Product 89,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0089,FALSE,archived,,,sample-product-89,draft
-,Sample Product 90,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0090,TRUE,live,,,,
-,Sample Product 91,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0091,FALSE,draft,,,sample-product-91,draft
-,Sample Product 92,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0092,FALSE,archived,,,sample-product-92,draft
-,Sample Product 93,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0093,TRUE,live,,,sample-product-93,live
-,Sample Product 94,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0094,FALSE,draft,,,sample-product-94,draft
-,Sample Product 95,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0095,FALSE,archived,,,,
-,Sample Product 96,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0096,TRUE,live,,,sample-product-96,live
-,Sample Product 97,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0097,FALSE,draft,,,sample-product-97,draft
-,Sample Product 98,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0098,FALSE,archived,,,sample-product-98,draft
-,Sample Product 99,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0099,TRUE,live,,,sample-product-99,live
-,Sample Product 100,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0100,FALSE,draft,,,,
-,Sample Product 101,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0101,FALSE,archived,,,sample-product-101,draft
-,Sample Product 102,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0102,TRUE,live,,,sample-product-102,live
-,Sample Product 103,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0103,FALSE,draft,,,sample-product-103,draft
-,Sample Product 104,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0104,FALSE,archived,,,sample-product-104,draft
-,Sample Product 105,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0105,TRUE,live,,,,
-,Sample Product 106,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0106,FALSE,draft,,,sample-product-106,draft
-,Sample Product 107,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0107,FALSE,archived,,,sample-product-107,draft
-,Sample Product 108,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0108,TRUE,live,,,sample-product-108,live
-,Sample Product 109,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0109,FALSE,draft,,,sample-product-109,draft
-,Sample Product 110,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0110,FALSE,archived,,,,
-,Sample Product 111,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0111,TRUE,live,,,sample-product-111,live
-,Sample Product 112,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0112,FALSE,draft,,,sample-product-112,draft
-,Sample Product 113,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0113,FALSE,archived,,,sample-product-113,draft
-,Sample Product 114,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0114,TRUE,live,,,sample-product-114,live
-,Sample Product 115,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0115,FALSE,draft,,,,
-,Sample Product 116,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0116,FALSE,archived,,,sample-product-116,draft
-,Sample Product 117,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0117,TRUE,live,,,sample-product-117,live
-,Sample Product 118,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0118,FALSE,draft,,,sample-product-118,draft
-,Sample Product 119,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0119,FALSE,archived,,,sample-product-119,draft
-,Sample Product 120,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0120,TRUE,live,,,,
-,Sample Product 121,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0121,FALSE,draft,,,sample-product-121,draft
-,Sample Product 122,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0122,FALSE,archived,,,sample-product-122,draft
-,Sample Product 123,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0123,TRUE,live,,,sample-product-123,live
-,Sample Product 124,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0124,FALSE,draft,,,sample-product-124,draft
-,Sample Product 125,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0125,FALSE,archived,,,,
-,Sample Product 126,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0126,TRUE,live,,,sample-product-126,live
-,Sample Product 127,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0127,FALSE,draft,,,sample-product-127,draft
-,Sample Product 128,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0128,FALSE,archived,,,sample-product-128,draft
-,Sample Product 129,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0129,TRUE,live,,,sample-product-129,live
-,Sample Product 130,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0130,FALSE,draft,,,,
-,Sample Product 131,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0131,FALSE,archived,,,sample-product-131,draft
-,Sample Product 132,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0132,TRUE,live,,,sample-product-132,live
-,Sample Product 133,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0133,FALSE,draft,,,sample-product-133,draft
-,Sample Product 134,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0134,FALSE,archived,,,sample-product-134,draft
-,Sample Product 135,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0135,TRUE,live,,,,
-,Sample Product 136,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0136,FALSE,draft,,,sample-product-136,draft
-,Sample Product 137,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0137,FALSE,archived,,,sample-product-137,draft
-,Sample Product 138,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0138,TRUE,live,,,sample-product-138,live
-,Sample Product 139,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0139,FALSE,draft,,,sample-product-139,draft
-,Sample Product 140,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0140,FALSE,archived,,,,
-,Sample Product 141,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0141,TRUE,live,,,sample-product-141,live
-,Sample Product 142,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0142,FALSE,draft,,,sample-product-142,draft
-,Sample Product 143,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0143,FALSE,archived,,,sample-product-143,draft
-,Sample Product 144,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0144,TRUE,live,,,sample-product-144,live
-,Sample Product 145,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0145,FALSE,draft,,,,
-,Sample Product 146,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0146,FALSE,archived,,,sample-product-146,draft
-,Sample Product 147,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0147,TRUE,live,,,sample-product-147,live
-,Sample Product 148,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0148,FALSE,draft,,,sample-product-148,draft
-,Sample Product 149,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0149,FALSE,archived,,,sample-product-149,draft
-,Sample Product 150,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0150,TRUE,live,,,,
-,Sample Product 151,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0151,FALSE,draft,,,sample-product-151,draft
-,Sample Product 152,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0152,FALSE,archived,,,sample-product-152,draft
-,Sample Product 153,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0153,TRUE,live,,,sample-product-153,live
-,Sample Product 154,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0154,FALSE,draft,,,sample-product-154,draft
-,Sample Product 155,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0155,FALSE,archived,,,,
-,Sample Product 156,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0156,TRUE,live,,,sample-product-156,live
-,Sample Product 157,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0157,FALSE,draft,,,sample-product-157,draft
-,Sample Product 158,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0158,FALSE,archived,,,sample-product-158,draft
-,Sample Product 159,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0159,TRUE,live,,,sample-product-159,live
-,Sample Product 160,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0160,FALSE,draft,,,,
-,Sample Product 161,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0161,FALSE,archived,,,sample-product-161,draft
-,Sample Product 162,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0162,TRUE,live,,,sample-product-162,live
-,Sample Product 163,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0163,FALSE,draft,,,sample-product-163,draft
-,Sample Product 164,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0164,FALSE,archived,,,sample-product-164,draft
-,Sample Product 165,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0165,TRUE,live,,,,
-,Sample Product 166,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0166,FALSE,draft,,,sample-product-166,draft
-,Sample Product 167,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0167,FALSE,archived,,,sample-product-167,draft
-,Sample Product 168,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0168,TRUE,live,,,sample-product-168,live
-,Sample Product 169,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0169,FALSE,draft,,,sample-product-169,draft
-,Sample Product 170,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0170,FALSE,archived,,,,
-,Sample Product 171,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0171,TRUE,live,,,sample-product-171,live
-,Sample Product 172,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0172,FALSE,draft,,,sample-product-172,draft
-,Sample Product 173,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0173,FALSE,archived,,,sample-product-173,draft
-,Sample Product 174,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0174,TRUE,live,,,sample-product-174,live
-,Sample Product 175,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0175,FALSE,draft,,,,
-,Sample Product 176,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0176,FALSE,archived,,,sample-product-176,draft
-,Sample Product 177,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0177,TRUE,live,,,sample-product-177,live
-,Sample Product 178,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0178,FALSE,draft,,,sample-product-178,draft
-,Sample Product 179,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0179,FALSE,archived,,,sample-product-179,draft
-,Sample Product 180,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0180,TRUE,live,,,,
-,Sample Product 181,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0181,FALSE,draft,,,sample-product-181,draft
-,Sample Product 182,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0182,FALSE,archived,,,sample-product-182,draft
-,Sample Product 183,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0183,TRUE,live,,,sample-product-183,live
-,Sample Product 184,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0184,FALSE,draft,,,sample-product-184,draft
-,Sample Product 185,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0185,FALSE,archived,,,,
-,Sample Product 186,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0186,TRUE,live,,,sample-product-186,live
-,Sample Product 187,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0187,FALSE,draft,,,sample-product-187,draft
-,Sample Product 188,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0188,FALSE,archived,,,sample-product-188,draft
-,Sample Product 189,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0189,TRUE,live,,,sample-product-189,live
-,Sample Product 190,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0190,FALSE,draft,,,,
-,Sample Product 191,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0191,FALSE,archived,,,sample-product-191,draft
-,Sample Product 192,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0192,TRUE,live,,,sample-product-192,live
-,Sample Product 193,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0193,FALSE,draft,,,sample-product-193,draft
-,Sample Product 194,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0194,FALSE,archived,,,sample-product-194,draft
-,Sample Product 195,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0195,TRUE,live,,,,
-,Sample Product 196,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0196,FALSE,draft,,,sample-product-196,draft
-,Sample Product 197,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0197,FALSE,archived,,,sample-product-197,draft
-,Sample Product 198,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0198,TRUE,live,,,sample-product-198,live
-,Sample Product 199,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0199,FALSE,draft,,,sample-product-199,draft
-,Sample Product 200,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0200,FALSE,archived,,,,
+product_id,product_name,product_brand,product_category,product_price,product_currency,product_image_url,product_affiliate_url,product_paid_traffic_allowed,product_status,product_commission_percentage,product_commission_notes,landing_page_id,landing_page_name,landing_page_slug,landing_page_status
+,Sample Product 1,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0001,FALSE,draft,,,,,sample-product-1,draft
+,Sample Product 2,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0002,FALSE,archived,,,,,sample-product-2,draft
+,Sample Product 3,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0003,TRUE,live,5,Amazon Associates - sample category,,,sample-product-3,live
+,Sample Product 4,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0004,FALSE,draft,,,,,sample-product-4,draft
+,Sample Product 5,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0005,FALSE,archived,,,,,,
+,Sample Product 6,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0006,TRUE,live,2,Amazon Associates - sample category,,,sample-product-6,live
+,Sample Product 7,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0007,FALSE,draft,,,,,sample-product-7,draft
+,Sample Product 8,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0008,FALSE,archived,,,,,sample-product-8,draft
+,Sample Product 9,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0009,TRUE,live,5,Amazon Associates - sample category,,,sample-product-9,live
+,Sample Product 10,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0010,FALSE,draft,,,,,,
+,Sample Product 11,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0011,FALSE,archived,,,,,sample-product-11,draft
+,Sample Product 12,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0012,TRUE,live,2,Amazon Associates - sample category,,,sample-product-12,live
+,Sample Product 13,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0013,FALSE,draft,,,,,sample-product-13,draft
+,Sample Product 14,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0014,FALSE,archived,,,,,sample-product-14,draft
+,Sample Product 15,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0015,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 16,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0016,FALSE,draft,,,,,sample-product-16,draft
+,Sample Product 17,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0017,FALSE,archived,,,,,sample-product-17,draft
+,Sample Product 18,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0018,TRUE,live,2,Amazon Associates - sample category,,,sample-product-18,live
+,Sample Product 19,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0019,FALSE,draft,,,,,sample-product-19,draft
+,Sample Product 20,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0020,FALSE,archived,,,,,,
+,Sample Product 21,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0021,TRUE,live,5,Amazon Associates - sample category,,,sample-product-21,live
+,Sample Product 22,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0022,FALSE,draft,,,,,sample-product-22,draft
+,Sample Product 23,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0023,FALSE,archived,,,,,sample-product-23,draft
+,Sample Product 24,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0024,TRUE,live,2,Amazon Associates - sample category,,,sample-product-24,live
+,Sample Product 25,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0025,FALSE,draft,,,,,,
+,Sample Product 26,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0026,FALSE,archived,,,,,sample-product-26,draft
+,Sample Product 27,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0027,TRUE,live,5,Amazon Associates - sample category,,,sample-product-27,live
+,Sample Product 28,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0028,FALSE,draft,,,,,sample-product-28,draft
+,Sample Product 29,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0029,FALSE,archived,,,,,sample-product-29,draft
+,Sample Product 30,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0030,TRUE,live,2,Amazon Associates - sample category,,,,
+,Sample Product 31,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0031,FALSE,draft,,,,,sample-product-31,draft
+,Sample Product 32,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0032,FALSE,archived,,,,,sample-product-32,draft
+,Sample Product 33,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0033,TRUE,live,5,Amazon Associates - sample category,,,sample-product-33,live
+,Sample Product 34,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0034,FALSE,draft,,,,,sample-product-34,draft
+,Sample Product 35,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0035,FALSE,archived,,,,,,
+,Sample Product 36,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0036,TRUE,live,2,Amazon Associates - sample category,,,sample-product-36,live
+,Sample Product 37,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0037,FALSE,draft,,,,,sample-product-37,draft
+,Sample Product 38,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0038,FALSE,archived,,,,,sample-product-38,draft
+,Sample Product 39,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0039,TRUE,live,5,Amazon Associates - sample category,,,sample-product-39,live
+,Sample Product 40,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0040,FALSE,draft,,,,,,
+,Sample Product 41,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0041,FALSE,archived,,,,,sample-product-41,draft
+,Sample Product 42,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0042,TRUE,live,2,Amazon Associates - sample category,,,sample-product-42,live
+,Sample Product 43,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0043,FALSE,draft,,,,,sample-product-43,draft
+,Sample Product 44,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0044,FALSE,archived,,,,,sample-product-44,draft
+,Sample Product 45,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0045,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 46,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0046,FALSE,draft,,,,,sample-product-46,draft
+,Sample Product 47,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0047,FALSE,archived,,,,,sample-product-47,draft
+,Sample Product 48,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0048,TRUE,live,2,Amazon Associates - sample category,,,sample-product-48,live
+,Sample Product 49,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0049,FALSE,draft,,,,,sample-product-49,draft
+,Sample Product 50,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0050,FALSE,archived,,,,,,
+,Sample Product 51,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0051,TRUE,live,5,Amazon Associates - sample category,,,sample-product-51,live
+,Sample Product 52,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0052,FALSE,draft,,,,,sample-product-52,draft
+,Sample Product 53,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0053,FALSE,archived,,,,,sample-product-53,draft
+,Sample Product 54,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0054,TRUE,live,2,Amazon Associates - sample category,,,sample-product-54,live
+,Sample Product 55,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0055,FALSE,draft,,,,,,
+,Sample Product 56,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0056,FALSE,archived,,,,,sample-product-56,draft
+,Sample Product 57,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0057,TRUE,live,5,Amazon Associates - sample category,,,sample-product-57,live
+,Sample Product 58,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0058,FALSE,draft,,,,,sample-product-58,draft
+,Sample Product 59,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0059,FALSE,archived,,,,,sample-product-59,draft
+,Sample Product 60,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0060,TRUE,live,2,Amazon Associates - sample category,,,,
+,Sample Product 61,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0061,FALSE,draft,,,,,sample-product-61,draft
+,Sample Product 62,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0062,FALSE,archived,,,,,sample-product-62,draft
+,Sample Product 63,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0063,TRUE,live,5,Amazon Associates - sample category,,,sample-product-63,live
+,Sample Product 64,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0064,FALSE,draft,,,,,sample-product-64,draft
+,Sample Product 65,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0065,FALSE,archived,,,,,,
+,Sample Product 66,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0066,TRUE,live,2,Amazon Associates - sample category,,,sample-product-66,live
+,Sample Product 67,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0067,FALSE,draft,,,,,sample-product-67,draft
+,Sample Product 68,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0068,FALSE,archived,,,,,sample-product-68,draft
+,Sample Product 69,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0069,TRUE,live,5,Amazon Associates - sample category,,,sample-product-69,live
+,Sample Product 70,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0070,FALSE,draft,,,,,,
+,Sample Product 71,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0071,FALSE,archived,,,,,sample-product-71,draft
+,Sample Product 72,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0072,TRUE,live,2,Amazon Associates - sample category,,,sample-product-72,live
+,Sample Product 73,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0073,FALSE,draft,,,,,sample-product-73,draft
+,Sample Product 74,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0074,FALSE,archived,,,,,sample-product-74,draft
+,Sample Product 75,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0075,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 76,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0076,FALSE,draft,,,,,sample-product-76,draft
+,Sample Product 77,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0077,FALSE,archived,,,,,sample-product-77,draft
+,Sample Product 78,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0078,TRUE,live,2,Amazon Associates - sample category,,,sample-product-78,live
+,Sample Product 79,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0079,FALSE,draft,,,,,sample-product-79,draft
+,Sample Product 80,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0080,FALSE,archived,,,,,,
+,Sample Product 81,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0081,TRUE,live,5,Amazon Associates - sample category,,,sample-product-81,live
+,Sample Product 82,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0082,FALSE,draft,,,,,sample-product-82,draft
+,Sample Product 83,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0083,FALSE,archived,,,,,sample-product-83,draft
+,Sample Product 84,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0084,TRUE,live,2,Amazon Associates - sample category,,,sample-product-84,live
+,Sample Product 85,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0085,FALSE,draft,,,,,,
+,Sample Product 86,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0086,FALSE,archived,,,,,sample-product-86,draft
+,Sample Product 87,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0087,TRUE,live,5,Amazon Associates - sample category,,,sample-product-87,live
+,Sample Product 88,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0088,FALSE,draft,,,,,sample-product-88,draft
+,Sample Product 89,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0089,FALSE,archived,,,,,sample-product-89,draft
+,Sample Product 90,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0090,TRUE,live,2,Amazon Associates - sample category,,,,
+,Sample Product 91,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0091,FALSE,draft,,,,,sample-product-91,draft
+,Sample Product 92,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0092,FALSE,archived,,,,,sample-product-92,draft
+,Sample Product 93,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0093,TRUE,live,5,Amazon Associates - sample category,,,sample-product-93,live
+,Sample Product 94,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0094,FALSE,draft,,,,,sample-product-94,draft
+,Sample Product 95,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0095,FALSE,archived,,,,,,
+,Sample Product 96,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0096,TRUE,live,2,Amazon Associates - sample category,,,sample-product-96,live
+,Sample Product 97,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0097,FALSE,draft,,,,,sample-product-97,draft
+,Sample Product 98,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0098,FALSE,archived,,,,,sample-product-98,draft
+,Sample Product 99,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0099,TRUE,live,5,Amazon Associates - sample category,,,sample-product-99,live
+,Sample Product 100,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0100,FALSE,draft,,,,,,
+,Sample Product 101,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0101,FALSE,archived,,,,,sample-product-101,draft
+,Sample Product 102,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0102,TRUE,live,2,Amazon Associates - sample category,,,sample-product-102,live
+,Sample Product 103,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0103,FALSE,draft,,,,,sample-product-103,draft
+,Sample Product 104,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0104,FALSE,archived,,,,,sample-product-104,draft
+,Sample Product 105,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0105,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 106,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0106,FALSE,draft,,,,,sample-product-106,draft
+,Sample Product 107,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0107,FALSE,archived,,,,,sample-product-107,draft
+,Sample Product 108,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0108,TRUE,live,2,Amazon Associates - sample category,,,sample-product-108,live
+,Sample Product 109,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0109,FALSE,draft,,,,,sample-product-109,draft
+,Sample Product 110,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0110,FALSE,archived,,,,,,
+,Sample Product 111,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0111,TRUE,live,5,Amazon Associates - sample category,,,sample-product-111,live
+,Sample Product 112,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0112,FALSE,draft,,,,,sample-product-112,draft
+,Sample Product 113,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0113,FALSE,archived,,,,,sample-product-113,draft
+,Sample Product 114,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0114,TRUE,live,2,Amazon Associates - sample category,,,sample-product-114,live
+,Sample Product 115,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0115,FALSE,draft,,,,,,
+,Sample Product 116,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0116,FALSE,archived,,,,,sample-product-116,draft
+,Sample Product 117,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0117,TRUE,live,5,Amazon Associates - sample category,,,sample-product-117,live
+,Sample Product 118,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0118,FALSE,draft,,,,,sample-product-118,draft
+,Sample Product 119,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0119,FALSE,archived,,,,,sample-product-119,draft
+,Sample Product 120,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0120,TRUE,live,2,Amazon Associates - sample category,,,,
+,Sample Product 121,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0121,FALSE,draft,,,,,sample-product-121,draft
+,Sample Product 122,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0122,FALSE,archived,,,,,sample-product-122,draft
+,Sample Product 123,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0123,TRUE,live,5,Amazon Associates - sample category,,,sample-product-123,live
+,Sample Product 124,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0124,FALSE,draft,,,,,sample-product-124,draft
+,Sample Product 125,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0125,FALSE,archived,,,,,,
+,Sample Product 126,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0126,TRUE,live,2,Amazon Associates - sample category,,,sample-product-126,live
+,Sample Product 127,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0127,FALSE,draft,,,,,sample-product-127,draft
+,Sample Product 128,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0128,FALSE,archived,,,,,sample-product-128,draft
+,Sample Product 129,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0129,TRUE,live,5,Amazon Associates - sample category,,,sample-product-129,live
+,Sample Product 130,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0130,FALSE,draft,,,,,,
+,Sample Product 131,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0131,FALSE,archived,,,,,sample-product-131,draft
+,Sample Product 132,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0132,TRUE,live,2,Amazon Associates - sample category,,,sample-product-132,live
+,Sample Product 133,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0133,FALSE,draft,,,,,sample-product-133,draft
+,Sample Product 134,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0134,FALSE,archived,,,,,sample-product-134,draft
+,Sample Product 135,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0135,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 136,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0136,FALSE,draft,,,,,sample-product-136,draft
+,Sample Product 137,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0137,FALSE,archived,,,,,sample-product-137,draft
+,Sample Product 138,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0138,TRUE,live,2,Amazon Associates - sample category,,,sample-product-138,live
+,Sample Product 139,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0139,FALSE,draft,,,,,sample-product-139,draft
+,Sample Product 140,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0140,FALSE,archived,,,,,,
+,Sample Product 141,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0141,TRUE,live,5,Amazon Associates - sample category,,,sample-product-141,live
+,Sample Product 142,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0142,FALSE,draft,,,,,sample-product-142,draft
+,Sample Product 143,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0143,FALSE,archived,,,,,sample-product-143,draft
+,Sample Product 144,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0144,TRUE,live,2,Amazon Associates - sample category,,,sample-product-144,live
+,Sample Product 145,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0145,FALSE,draft,,,,,,
+,Sample Product 146,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0146,FALSE,archived,,,,,sample-product-146,draft
+,Sample Product 147,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0147,TRUE,live,5,Amazon Associates - sample category,,,sample-product-147,live
+,Sample Product 148,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0148,FALSE,draft,,,,,sample-product-148,draft
+,Sample Product 149,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0149,FALSE,archived,,,,,sample-product-149,draft
+,Sample Product 150,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0150,TRUE,live,2,Amazon Associates - sample category,,,,
+,Sample Product 151,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0151,FALSE,draft,,,,,sample-product-151,draft
+,Sample Product 152,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0152,FALSE,archived,,,,,sample-product-152,draft
+,Sample Product 153,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0153,TRUE,live,5,Amazon Associates - sample category,,,sample-product-153,live
+,Sample Product 154,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0154,FALSE,draft,,,,,sample-product-154,draft
+,Sample Product 155,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0155,FALSE,archived,,,,,,
+,Sample Product 156,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0156,TRUE,live,2,Amazon Associates - sample category,,,sample-product-156,live
+,Sample Product 157,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0157,FALSE,draft,,,,,sample-product-157,draft
+,Sample Product 158,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0158,FALSE,archived,,,,,sample-product-158,draft
+,Sample Product 159,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0159,TRUE,live,5,Amazon Associates - sample category,,,sample-product-159,live
+,Sample Product 160,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0160,FALSE,draft,,,,,,
+,Sample Product 161,UrbanNest,Home Decor,1249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0161,FALSE,archived,,,,,sample-product-161,draft
+,Sample Product 162,TechNova,Electronics Accessories,1499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0162,TRUE,live,2,Amazon Associates - sample category,,,sample-product-162,live
+,Sample Product 163,GlowLab,Skincare,1749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0163,FALSE,draft,,,,,sample-product-163,draft
+,Sample Product 164,PetJoy,Pet Supplies,1999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0164,FALSE,archived,,,,,sample-product-164,draft
+,Sample Product 165,CookWell,Kitchen Tools,2249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0165,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 166,ZenDesk,Office Essentials,2499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0166,FALSE,draft,,,,,sample-product-166,draft
+,Sample Product 167,TrailMate,Outdoor Gear,2749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0167,FALSE,archived,,,,,sample-product-167,draft
+,Sample Product 168,FitTrip,Mens Workout,2999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0168,TRUE,live,2,Amazon Associates - sample category,,,sample-product-168,live
+,Sample Product 169,UrbanNest,Home Decor,3249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0169,FALSE,draft,,,,,sample-product-169,draft
+,Sample Product 170,TechNova,Electronics Accessories,3499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0170,FALSE,archived,,,,,,
+,Sample Product 171,GlowLab,Skincare,3749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0171,TRUE,live,5,Amazon Associates - sample category,,,sample-product-171,live
+,Sample Product 172,PetJoy,Pet Supplies,3999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0172,FALSE,draft,,,,,sample-product-172,draft
+,Sample Product 173,CookWell,Kitchen Tools,4249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0173,FALSE,archived,,,,,sample-product-173,draft
+,Sample Product 174,ZenDesk,Office Essentials,4499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0174,TRUE,live,2,Amazon Associates - sample category,,,sample-product-174,live
+,Sample Product 175,TrailMate,Outdoor Gear,4749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0175,FALSE,draft,,,,,,
+,Sample Product 176,FitTrip,Mens Workout,4999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0176,FALSE,archived,,,,,sample-product-176,draft
+,Sample Product 177,UrbanNest,Home Decor,5249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0177,TRUE,live,5,Amazon Associates - sample category,,,sample-product-177,live
+,Sample Product 178,TechNova,Electronics Accessories,5499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0178,FALSE,draft,,,,,sample-product-178,draft
+,Sample Product 179,GlowLab,Skincare,5749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0179,FALSE,archived,,,,,sample-product-179,draft
+,Sample Product 180,PetJoy,Pet Supplies,5999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0180,TRUE,live,2,Amazon Associates - sample category,,,,
+,Sample Product 181,CookWell,Kitchen Tools,6249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0181,FALSE,draft,,,,,sample-product-181,draft
+,Sample Product 182,ZenDesk,Office Essentials,6499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0182,FALSE,archived,,,,,sample-product-182,draft
+,Sample Product 183,TrailMate,Outdoor Gear,6749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0183,TRUE,live,5,Amazon Associates - sample category,,,sample-product-183,live
+,Sample Product 184,FitTrip,Mens Workout,6999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0184,FALSE,draft,,,,,sample-product-184,draft
+,Sample Product 185,UrbanNest,Home Decor,7249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0185,FALSE,archived,,,,,,
+,Sample Product 186,TechNova,Electronics Accessories,7499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0186,TRUE,live,2,Amazon Associates - sample category,,,sample-product-186,live
+,Sample Product 187,GlowLab,Skincare,7749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0187,FALSE,draft,,,,,sample-product-187,draft
+,Sample Product 188,PetJoy,Pet Supplies,7999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0188,FALSE,archived,,,,,sample-product-188,draft
+,Sample Product 189,CookWell,Kitchen Tools,8249,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0189,TRUE,live,5,Amazon Associates - sample category,,,sample-product-189,live
+,Sample Product 190,ZenDesk,Office Essentials,8499,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0190,FALSE,draft,,,,,,
+,Sample Product 191,TrailMate,Outdoor Gear,8749,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0191,FALSE,archived,,,,,sample-product-191,draft
+,Sample Product 192,FitTrip,Mens Workout,8999,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0192,TRUE,live,2,Amazon Associates - sample category,,,sample-product-192,live
+,Sample Product 193,UrbanNest,Home Decor,9249,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0193,FALSE,draft,,,,,sample-product-193,draft
+,Sample Product 194,TechNova,Electronics Accessories,9499,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0194,FALSE,archived,,,,,sample-product-194,draft
+,Sample Product 195,GlowLab,Skincare,9749,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0195,TRUE,live,5,Amazon Associates - sample category,,,,
+,Sample Product 196,PetJoy,Pet Supplies,9999,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0196,FALSE,draft,,,,,sample-product-196,draft
+,Sample Product 197,CookWell,Kitchen Tools,10249,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0197,FALSE,archived,,,,,sample-product-197,draft
+,Sample Product 198,ZenDesk,Office Essentials,10499,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://example.com/dp/SAMPLE0198,TRUE,live,2,Amazon Associates - sample category,,,sample-product-198,live
+,Sample Product 199,TrailMate,Outdoor Gear,10749,INR,https://m.media-amazon.com/images/I/61Q3z6z9F+L._SL1500_.jpg,https://example.com/dp/SAMPLE0199,FALSE,draft,,,,,sample-product-199,draft
+,Sample Product 200,FitTrip,Mens Workout,999,INR,https://m.media-amazon.com/images/I/81c2z9b3E-L._SL1500_.jpg,https://example.com/dp/SAMPLE0200,FALSE,archived,,,,,,

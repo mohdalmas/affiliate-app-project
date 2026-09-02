@@ -1,21 +1,21 @@
-product_id,product_name,product_brand,product_category,product_price,product_currency,product_image_url,product_affiliate_url,product_paid_traffic_allowed,product_status,landing_page_id,landing_page_name,landing_page_slug,landing_page_status
-,Cycle 1,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-1,live
-,Cycle 2,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-2,live
-,Cycle 3,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-3,live
-,Cycle 4,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-4,live
-,Cycle 5,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-5,live
-,Cycle 6,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-6,live
-,Cycle 7,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-7,live
-,Cycle 8,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-8,live
-,Cycle 9,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-9,live
-,Cycle 10,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-10,live
-,Cycle 11,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-11,live
-,Cycle 12,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-12,live
-,Cycle 13,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-13,live
-,Cycle 14,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-14,live
-,Cycle 15,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-15,live
-,Cycle 16,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-16,live
-,Cycle 17,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-17,live
-,Cycle 18,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-18,live
-,Cycle 19,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-19,live
-,Cycle 20,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,cycle-20,live
+product_id,product_name,product_brand,product_category,product_price,product_currency,product_image_url,product_affiliate_url,product_paid_traffic_allowed,product_status,product_commission_percentage,product_commission_notes,landing_page_id,landing_page_name,landing_page_slug,landing_page_status
+,Cycle 1,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-1,live
+,Cycle 2,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-2,live
+,Cycle 3,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,5,Amazon Associates - sample category,,,cycle-3,live
+,Cycle 4,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-4,live
+,Cycle 5,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-5,live
+,Cycle 6,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,2,Amazon Associates - sample category,,,cycle-6,live
+,Cycle 7,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-7,live
+,Cycle 8,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-8,live
+,Cycle 9,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,5,Amazon Associates - sample category,,,cycle-9,live
+,Cycle 10,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-10,live
+,Cycle 11,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-11,live
+,Cycle 12,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,2,Amazon Associates - sample category,,,cycle-12,live
+,Cycle 13,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-13,live
+,Cycle 14,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-14,live
+,Cycle 15,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,5,Amazon Associates - sample category,,,cycle-15,live
+,Cycle 16,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-16,live
+,Cycle 17,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-17,live
+,Cycle 18,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,2,Amazon Associates - sample category,,,cycle-18,live
+,Cycle 19,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-19,live
+,Cycle 20,FitTrip,Mens Workout,23250,INR,https://m.media-amazon.com/images/I/71ofUdtvNtL._SL1500_.jpg,https://link.amazon/B03tk3a3N,TRUE,live,,,,,cycle-20,live

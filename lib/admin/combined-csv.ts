@@ -21,6 +21,8 @@ export type ParsedProductFields = {
   affiliate_url: string | null;
   paid_traffic_allowed: boolean;
   status: string;
+  commission_percentage: number | null;
+  commission_notes: string | null;
 };
 
 export type ParsedLandingPageFields = {
@@ -59,6 +61,24 @@ export function parseCombinedRow(header: string[], row: string[]): ParsedRow {
     return { ok: false, error: `product_price "${priceRaw}" isn't a number` };
   }
 
+  const commissionRaw = get("product_commission_percentage");
+  const commissionPercentage = commissionRaw === "" ? null : Number(commissionRaw);
+  if (commissionPercentage != null && Number.isNaN(commissionPercentage)) {
+    return {
+      ok: false,
+      error: `product_commission_percentage "${commissionRaw}" isn't a number`,
+    };
+  }
+  if (
+    commissionPercentage != null &&
+    (commissionPercentage < 0 || commissionPercentage > 100)
+  ) {
+    return {
+      ok: false,
+      error: `product_commission_percentage "${commissionRaw}" must be between 0 and 100`,
+    };
+  }
+
   const product: ParsedProductFields = {
     id: get("product_id") || null,
     name: productName,
@@ -72,6 +92,8 @@ export function parseCombinedRow(header: string[], row: string[]): ParsedRow {
       get("product_paid_traffic_allowed").toLowerCase(),
     ),
     status: productStatus,
+    commission_percentage: commissionPercentage,
+    commission_notes: get("product_commission_notes") || null,
   };
 
   const slug = get("landing_page_slug");

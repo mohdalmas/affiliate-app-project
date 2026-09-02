@@ -6,6 +6,9 @@ import { DeleteButton } from "@/components/admin/delete-button";
 import { ListToolbar, ListPagination } from "@/components/admin/list-toolbar";
 import { deleteLandingPage } from "./actions";
 
+// See the matching comment in app/admin/products/page.tsx — same reasoning.
+export const instant = false;
+
 const PAGE_SIZE_OPTIONS = [10, 50, 100];
 
 export default async function LandingPagesPage({

@@ -12,6 +12,8 @@ const HEADER = [
   "product_affiliate_url",
   "product_paid_traffic_allowed",
   "product_status",
+  "product_commission_percentage",
+  "product_commission_notes",
   "landing_page_id",
   "landing_page_name",
   "landing_page_slug",
@@ -106,6 +108,53 @@ describe("parseCombinedRow", () => {
     expect(result).toEqual({
       ok: false,
       error: 'product_price "expensive" isn\'t a number',
+    });
+  });
+
+  it("parses a valid commission_percentage and notes", () => {
+    const result = parseCombinedRow(
+      HEADER,
+      row({
+        product_name: "Trimmer",
+        product_commission_percentage: "4.5",
+        product_commission_notes: "Amazon Associates, Home & Kitchen",
+      }),
+    );
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.product.commission_percentage).toBe(4.5);
+      expect(result.product.commission_notes).toBe("Amazon Associates, Home & Kitchen");
+    }
+  });
+
+  it("blank commission fields default to null, not 0", () => {
+    const result = parseCombinedRow(HEADER, row({ product_name: "Trimmer" }));
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.product.commission_percentage).toBeNull();
+      expect(result.product.commission_notes).toBeNull();
+    }
+  });
+
+  it("rejects a non-numeric commission_percentage", () => {
+    const result = parseCombinedRow(
+      HEADER,
+      row({ product_name: "Trimmer", product_commission_percentage: "high" }),
+    );
+    expect(result).toEqual({
+      ok: false,
+      error: 'product_commission_percentage "high" isn\'t a number',
+    });
+  });
+
+  it("rejects a commission_percentage outside 0-100", () => {
+    const result = parseCombinedRow(
+      HEADER,
+      row({ product_name: "Trimmer", product_commission_percentage: "150" }),
+    );
+    expect(result).toEqual({
+      ok: false,
+      error: 'product_commission_percentage "150" must be between 0 and 100',
     });
   });
 

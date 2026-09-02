@@ -1,6 +1,10 @@
 import { SectionHeader } from "@/components/admin/list-ui";
 import { CsvTools, ImportSummaryBanner } from "@/components/admin/csv-tools";
 
+// See the matching comment in app/admin/products/page.tsx — same reasoning
+// (this page reads `searchParams.importSummary` on every load).
+export const instant = false;
+
 export default async function ImportExportPage({
   searchParams,
 }: {

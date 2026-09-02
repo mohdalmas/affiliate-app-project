@@ -7,6 +7,15 @@ import { ListToolbar, ListPagination } from "@/components/admin/list-toolbar";
 import { Badge } from "@/components/ui/badge";
 import { deleteProduct } from "./actions";
 
+// This page always reads fresh, uncached data keyed by `searchParams`
+// (search/page/pageSize) — the "Instant" dev overlay insight flags that as
+// preventing an instant client-side navigation into this page, which is
+// expected and fine for an admin table. See app/admin/layout.tsx's comment
+// on `instant` for the general reasoning; set again here directly since
+// the dev overlay's per-route insight checks each page, not just the
+// layout it inherits from.
+export const instant = false;
+
 // Server Component: reads straight from Supabase on the server, using your
 // logged-in session's cookies — the RLS policy from the schema ("authenticated
 // full access") is what actually allows this query to return rows.

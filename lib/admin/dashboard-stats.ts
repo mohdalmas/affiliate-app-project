@@ -26,12 +26,24 @@ export function countEventsByProduct(
   return counts;
 }
 
-export type ProductRow = { id: string; name: string; status: string };
+export type ProductRow = {
+  id: string;
+  name: string;
+  status: string;
+  price: number | null;
+  commission_percentage: number | null;
+};
 
 export type DashboardRow = ProductRow & {
   views: number;
   clicks: number;
   clickRate: number | null; // null when there are no views yet — avoids a 0/0 = NaN
+  // A rough, best-case estimate only — assumes every recorded click turns
+  // into a sale at the product's price, which is never actually true. Real
+  // Amazon Associates commission isn't available via API, so this is just
+  // "clicks × price × your commission %", purely to make the admin-entered
+  // rate visible somewhere useful. null when price or commission % is unset.
+  estimatedCommission: number | null;
 };
 
 export function buildDashboardRows(
@@ -43,11 +55,16 @@ export function buildDashboardRows(
   return products
     .map((product) => {
       const { views, clicks } = counts.get(product.id) ?? { views: 0, clicks: 0 };
+      const estimatedCommission =
+        product.price != null && product.commission_percentage != null
+          ? clicks * product.price * (product.commission_percentage / 100)
+          : null;
       return {
         ...product,
         views,
         clicks,
         clickRate: views > 0 ? clicks / views : null,
+        estimatedCommission,
       };
     })
     .sort((a, b) => b.clicks - a.clicks || b.views - a.views);

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { TextField, SelectField, CheckboxField } from "@/components/admin/form-fields";
+import { TextField, TextAreaField, SelectField, CheckboxField } from "@/components/admin/form-fields";
 import { HelpPanel, FormLayout } from "@/components/admin/help-panel";
 import { SubmitButton } from "@/components/admin/submit-button";
 import { createClient } from "@/lib/supabase/server";
@@ -58,6 +58,31 @@ export default async function EditProductPage({
             options={STATUS_OPTIONS}
             required
           />
+
+          <div className="flex flex-col gap-3 border rounded-md p-3 bg-muted/30">
+            <p className="text-sm font-medium">Commission</p>
+            <TextField
+              name="commission_percentage"
+              label="Commission %"
+              type="number"
+              step="0.01"
+              placeholder="e.g. 4"
+              defaultValue={product.commission_percentage}
+            />
+            <TextAreaField
+              name="commission_notes"
+              label="Notes"
+              rows={2}
+              defaultValue={product.commission_notes}
+            />
+            <p className="text-xs text-muted-foreground">
+              Your own estimate — Amazon doesn&apos;t expose real per-sale
+              commission via API. Only used for the Dashboard&apos;s
+              estimated-commission chart, never treat it as confirmed
+              earnings.
+            </p>
+          </div>
+
           <div className="flex gap-2">
             <SubmitButton>Save changes</SubmitButton>
             <Button asChild variant="outline">

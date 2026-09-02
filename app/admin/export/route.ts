@@ -18,6 +18,8 @@ const COLUMNS = [
   "product_affiliate_url",
   "product_paid_traffic_allowed",
   "product_status",
+  "product_commission_percentage",
+  "product_commission_notes",
   "landing_page_id",
   "landing_page_name",
   "landing_page_slug",
@@ -35,6 +37,8 @@ type ProductRow = {
   affiliate_url: string | null;
   paid_traffic_allowed: boolean;
   status: string;
+  commission_percentage: number | null;
+  commission_notes: string | null;
 };
 
 type LandingPageRow = {
@@ -52,7 +56,9 @@ export async function GET() {
     await Promise.all([
       supabase
         .from("products")
-        .select("id, name, brand, category, price, currency, image_url, affiliate_url, paid_traffic_allowed, status")
+        .select(
+          "id, name, brand, category, price, currency, image_url, affiliate_url, paid_traffic_allowed, status, commission_percentage, commission_notes",
+        )
         .order("name"),
       supabase.from("landing_pages").select("id, name, slug, status, product_id").order("name"),
     ]);
@@ -86,6 +92,8 @@ export async function GET() {
         product.affiliate_url,
         product.paid_traffic_allowed,
         product.status,
+        product.commission_percentage,
+        product.commission_notes,
         page?.id ?? null,
         page?.name ?? null,
         page?.slug ?? null,

@@ -83,6 +83,8 @@ export async function importCombinedCsv(formData: FormData) {
       affiliate_url: product.affiliate_url,
       paid_traffic_allowed: product.paid_traffic_allowed,
       status: product.status,
+      commission_percentage: product.commission_percentage,
+      commission_notes: product.commission_notes,
     };
 
     let productId = product.id;
