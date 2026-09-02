@@ -7,6 +7,10 @@ import { getProductOptions } from "@/lib/admin/options";
 import { createLandingPage } from "../actions";
 import { LANDING_PAGE_HELP_DESCRIPTION, LANDING_PAGE_HELP_FIELDS } from "../help";
 
+// See the matching comment in app/admin/products/page.tsx — same reasoning
+// (getProductOptions() below is always a fresh, uncached query).
+export const instant = false;
+
 const STATUS_OPTIONS = ["draft", "live", "archived"].map((value) => ({
   value,
   label: value,

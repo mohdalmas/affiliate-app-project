@@ -9,6 +9,11 @@ import { getProductOptions } from "@/lib/admin/options";
 import { updateLandingPage } from "../../actions";
 import { LANDING_PAGE_HELP_DESCRIPTION, LANDING_PAGE_HELP_FIELDS } from "../../help";
 
+// See the matching comment in app/admin/products/page.tsx — same reasoning
+// (the landing-page-by-id lookup and getProductOptions() below are always
+// fresh, never cached).
+export const instant = false;
+
 const STATUS_OPTIONS = ["draft", "live", "archived"].map((value) => ({
   value,
   label: value,

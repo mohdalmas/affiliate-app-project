@@ -55,15 +55,20 @@ function wedgePath(
 export function PieChart({
   data,
   size = 160,
-  valueFormat = (v: number) => String(v),
+  unit = "",
 }: {
   data: PieSlice[];
   size?: number;
-  valueFormat?: (value: number) => string;
+  // A plain string, not a function — this is a Client Component, and a
+  // function prop passed in from a Server Component (like app/admin/page.tsx)
+  // can't cross that boundary (it isn't serializable over the RSC wire
+  // format, and crashes at render time). "clicks" → "3 clicks".
+  unit?: string;
 }) {
   const [hovered, setHovered] = useState<number | null>(null);
   const total = data.reduce((sum, d) => sum + d.value, 0);
   const r = size / 2;
+  const formatValue = (v: number) => (unit ? `${v} ${unit}` : String(v));
 
   let cumulative = 0;
   const slices = data.map((d, i) => {
@@ -110,7 +115,7 @@ export function PieChart({
                   className="cursor-pointer outline-none"
                 >
                   <title>
-                    {s.label}: {valueFormat(s.value)} ({((s.value / total) * 100).toFixed(1)}%)
+                    {s.label}: {formatValue(s.value)} ({((s.value / total) * 100).toFixed(1)}%)
                     {s.detail ? ` — ${s.detail}` : ""}
                   </title>
                 </path>
@@ -125,7 +130,7 @@ export function PieChart({
               <span className="text-xs font-medium truncate max-w-full">
                 {data[hovered].label}
               </span>
-              <span className="text-sm font-bold">{valueFormat(data[hovered].value)}</span>
+              <span className="text-sm font-bold">{formatValue(data[hovered].value)}</span>
               <span className="text-xs text-muted-foreground">
                 {((data[hovered].value / total) * 100).toFixed(1)}%
               </span>
@@ -153,7 +158,7 @@ export function PieChart({
               />
               <span className="font-medium truncate max-w-[10rem]">{d.label}</span>
               <span className="text-muted-foreground">
-                {valueFormat(d.value)}
+                {formatValue(d.value)}
                 {total > 0 && ` (${((d.value / total) * 100).toFixed(1)}%)`}
               </span>
               {d.detail && (

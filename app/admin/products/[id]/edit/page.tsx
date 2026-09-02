@@ -8,6 +8,10 @@ import { createClient } from "@/lib/supabase/server";
 import { updateProduct } from "../../actions";
 import { PRODUCT_HELP_DESCRIPTION, PRODUCT_HELP_FIELDS } from "../../help";
 
+// See the matching comment in app/admin/products/page.tsx — same reasoning
+// (this page's product-by-id lookup is always fresh, never cached).
+export const instant = false;
+
 const STATUS_OPTIONS = ["draft", "live", "archived"].map((value) => ({
   value,
   label: value,

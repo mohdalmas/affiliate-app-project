@@ -127,10 +127,7 @@ async function Stats() {
         <h2 className="font-medium text-sm">
           {chartByClicks ? "Affiliate clicks by product" : "Views by product"}
         </h2>
-        <PieChart
-          data={chartData}
-          valueFormat={(v) => `${v} ${chartByClicks ? "clicks" : "views"}`}
-        />
+        <PieChart data={chartData} unit={chartByClicks ? "clicks" : "views"} />
         <p className="text-xs text-muted-foreground">
           Estimates only — assumes every click converts at the product&apos;s
           listed commission %, which real sales almost never do. Amazon
