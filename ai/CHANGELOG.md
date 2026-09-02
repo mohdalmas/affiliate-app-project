@@ -4,6 +4,24 @@ Session-level summary of what shipped, newest first. Not a commit log
 (that's `git log`) — this is "what a returning session needs to know
 happened," at the size of a few bullets per session.
 
+## 2026-09-02 — Cross-browser/mobile CSS hardening
+
+Reported: "CSS breaking in other browsers/laptops/mobile" — no repro
+details given, so this was an audit-and-harden pass (see `DECISIONS.md`)
+rather than a fix for one pinpointed bug. Ask for a screenshot + browser/
+device if it's still happening after this.
+
+- `ProductView`'s image box (`aspect-square`) now has a `min-h-*` fallback
+  — collapses to 0 height with no fallback on a browser/webview without
+  `aspect-ratio` support.
+- `DealSection`'s horizontal scroll row: added `overscroll-x-contain`
+  (stops a horizontal swipe from also dragging the whole page) and
+  `-webkit-overflow-scrolling: touch` (momentum scroll on older iOS
+  Safari).
+- Added an explicit `browserslist` to `package.json` (was relying on
+  autoprefixer/Next's implicit default) — explicitly covers iOS 12+ and
+  Android 6+ instead of an unstated "last 2 versions".
+
 ## 2026-09-02 — Downloadable sample CSV + first push
 
 - `public/sample-data/product-import-template.csv` (3 example rows, all

@@ -25,7 +25,15 @@ export function DealSection({
           </p>
         )}
       </div>
-      <div className="flex gap-4 sm:gap-5 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-2 -mx-1 px-1">
+      {/* overscroll-x-contain stops the swipe from also dragging the whole
+          page (a common "feels broken" symptom on mobile Safari/Chrome for
+          Android when a horizontal scroller sits inside a vertically
+          scrolling page); [-webkit-overflow-scrolling:touch] gives it
+          native momentum on older iOS Safari, which doesn't do that by
+          default the way modern versions do. */}
+      <div
+        className="flex gap-4 sm:gap-5 overflow-x-auto overscroll-x-contain snap-x snap-mandatory scroll-smooth pb-2 -mx-1 px-1 [-webkit-overflow-scrolling:touch]"
+      >
         {items.map((child, i) => (
           <div
             key={i}

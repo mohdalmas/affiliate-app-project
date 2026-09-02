@@ -49,7 +49,11 @@ export function ProductView({
           to real visitors yet
         </div>
       )}
-      <div className="w-full aspect-square bg-muted/60 rounded-md flex items-center justify-center overflow-hidden">
+      {/* min-h-* is a fallback for browsers/webviews that don't support the
+          `aspect-ratio` CSS property (some older Android WebViews, older
+          in-app browsers) — without it, this box collapses to 0 height
+          there instead of just losing the exact 1:1 ratio. */}
+      <div className="w-full aspect-square min-h-[260px] sm:min-h-[320px] bg-muted/60 rounded-md flex items-center justify-center overflow-hidden">
         {product.image_url ? (
           // eslint-disable-next-line @next/next/no-img-element -- external, unoptimizable product image URLs
           <img
