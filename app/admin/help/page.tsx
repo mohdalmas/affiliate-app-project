@@ -145,6 +145,18 @@ yourdomain.com/[slug] works, and yourdomain.com/go/[slug] redirects`}
 
         <div className="flex flex-col gap-1">
           <h3 className="font-medium">
+            <Link href="/admin/settings" className="underline">Settings</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Site-wide text that isn&apos;t tied to a specific product or
+            page — right now, just the announcement bar across the top of
+            every public page. Leave either field blank to drop that
+            segment (or the whole bar, if both are blank).
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <h3 className="font-medium">
             <Link href="/admin" className="underline">Dashboard</Link>
           </h3>
           <p className="text-sm text-muted-foreground">

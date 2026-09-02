@@ -7,9 +7,14 @@ type DealProduct = {
   brand: string | null;
   price: number | null;
   currency: string | null;
+  mrp: number | null;
+  rating: number | null;
+  review_count: number | null;
   image_url: string | null;
   status: string;
 };
+
+const PRODUCT_COLUMNS = "name, brand, price, currency, mrp, rating, review_count, image_url, status";
 
 type SectionItemRow = {
   position: number;
@@ -40,6 +45,9 @@ type Card = {
   imageUrl: string | null;
   price: number | null;
   currency: string | null;
+  mrp: number | null;
+  rating: number | null;
+  reviewCount: number | null;
 };
 
 function isLive(item: SectionItemRow) {
@@ -55,6 +63,9 @@ function toCard(lp: NonNullable<SectionItemRow["landing_page"]>): Card {
     imageUrl: product.image_url,
     price: product.price,
     currency: product.currency,
+    mrp: product.mrp,
+    rating: product.rating,
+    reviewCount: product.review_count,
   };
 }
 
@@ -72,7 +83,7 @@ async function getCategoryCards(
 ): Promise<Card[]> {
   const { data } = await supabase
     .from("landing_pages")
-    .select("slug, name, product:products!inner(name, brand, price, currency, image_url, status, category)")
+    .select(`slug, name, product:products!inner(${PRODUCT_COLUMNS}, category)`)
     .eq("status", "live")
     .eq("product.status", "live")
     .eq("product.category", category)
@@ -86,6 +97,9 @@ async function getCategoryCards(
     imageUrl: row.product?.image_url ?? null,
     price: row.product?.price ?? null,
     currency: row.product?.currency ?? null,
+    mrp: row.product?.mrp ?? null,
+    rating: row.product?.rating ?? null,
+    reviewCount: row.product?.review_count ?? null,
   }));
 }
 
@@ -104,7 +118,7 @@ export async function HomeSections() {
   const { data } = await supabase
     .from("home_sections")
     .select(
-      "id, title, subtitle, category, items:home_section_items(position, landing_page:landing_pages(slug, name, status, product:products(name, brand, price, currency, image_url, status)))",
+      `id, title, subtitle, category, items:home_section_items(position, landing_page:landing_pages(slug, name, status, product:products(${PRODUCT_COLUMNS})))`,
     )
     .eq("status", "live")
     .order("position", { ascending: true });
@@ -154,6 +168,9 @@ export async function HomeSections() {
               imageUrl={item.imageUrl}
               price={item.price}
               currency={item.currency}
+              mrp={item.mrp}
+              rating={item.rating}
+              reviewCount={item.reviewCount}
             />
           ))}
         </DealSection>
@@ -172,7 +189,7 @@ async function FallbackAllDeals() {
   const supabase = createServiceClient();
   const { data } = await supabase
     .from("landing_pages")
-    .select("slug, name, product:products!inner(name, brand, price, currency, image_url, status)")
+    .select(`slug, name, product:products!inner(${PRODUCT_COLUMNS})`)
     .eq("status", "live")
     .eq("product.status", "live")
     .order("created_at", { ascending: false });
@@ -197,6 +214,9 @@ async function FallbackAllDeals() {
           imageUrl={page.product?.image_url}
           price={page.product?.price}
           currency={page.product?.currency}
+          mrp={page.product?.mrp}
+          rating={page.product?.rating}
+          reviewCount={page.product?.review_count}
         />
       ))}
     </DealSection>

@@ -28,6 +28,11 @@ export default function NewProductPage() {
             <TextField name="price" label="Price" type="number" step="0.01" />
             <TextField name="currency" label="Currency" defaultValue="INR" />
           </div>
+          <div className="grid grid-cols-2 gap-4">
+            <TextField name="mrp" label="MRP (original price)" type="number" step="0.01" placeholder="e.g. 999" />
+            <TextField name="rating" label="Rating (0–5)" type="number" step="0.1" placeholder="e.g. 4.3" />
+          </div>
+          <TextField name="review_count" label="Review count" type="number" placeholder="e.g. 1250" />
           <TextField name="image_url" label="Image URL" type="url" />
           <TextField name="affiliate_url" label="Affiliate URL" type="url" placeholder="https://example.com" />
           <CheckboxField

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/logo";
+import { getSiteSettings } from "@/lib/site-settings";
 import { DisclosureFooter } from "./disclosure-footer";
 
 // Shared chrome for every public (logged-out) page: the product/collection
@@ -9,14 +10,23 @@ import { DisclosureFooter } from "./disclosure-footer";
 //
 // Header follows Template 3 ("E-Commerce Store Portal Grid") from
 // dealsjunction-template3-toolkit: a slim dark announcement bar over a
-// sticky white navbar carrying the brand mark.
-export function PageShell({ children }: { children: React.ReactNode }) {
+// sticky white navbar carrying the brand mark. The announcement bar's
+// text is admin-editable (see app/admin/settings, lib/site-settings.ts) —
+// this is now an async Server Component to read it.
+export async function PageShell({ children }: { children: React.ReactNode }) {
+  const { announcement_prefix, announcement_highlight } = await getSiteSettings();
+
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="bg-ink text-ink-foreground text-center text-xs font-medium py-1.5 px-4">
-        Fresh deals, verified daily —{" "}
-        <span className="text-primary font-semibold">Shop smart. Save big.</span>
-      </div>
+      {(announcement_prefix || announcement_highlight) && (
+        <div className="bg-ink text-ink-foreground text-center text-xs font-medium py-1.5 px-4">
+          {announcement_prefix}
+          {announcement_prefix && announcement_highlight && " "}
+          {announcement_highlight && (
+            <span className="text-primary font-semibold">{announcement_highlight}</span>
+          )}
+        </div>
+      )}
       <header className="sticky top-0 z-50 bg-card border-b">
         <nav className="max-w-6xl mx-auto flex items-center h-24 px-5">
           <Link href="/" aria-label="Deals Junction — home">

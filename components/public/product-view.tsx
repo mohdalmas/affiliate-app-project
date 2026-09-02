@@ -1,4 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
+import { discountPercent } from "@/lib/pricing";
+import { StarRating } from "./star-rating";
 
 export type PreviewableProduct = {
   name: string;
@@ -6,6 +8,9 @@ export type PreviewableProduct = {
   category: string | null;
   price: number | null;
   currency: string | null;
+  mrp: number | null;
+  rating: number | null;
+  review_count: number | null;
   image_url: string | null;
   affiliate_url: string | null;
   paid_traffic_allowed: boolean;
@@ -40,6 +45,7 @@ export function ProductView({
   }
 
   const canRedirect = product.paid_traffic_allowed && !!product.affiliate_url;
+  const discount = discountPercent(product.price, product.mrp);
 
   return (
     <div className="max-w-lg mx-auto bg-card border rounded-lg shadow-card p-5 flex flex-col gap-4">
@@ -76,10 +82,25 @@ export function ProductView({
       <p className="text-muted-foreground text-sm">
         {[product.brand, product.category].filter(Boolean).join(" · ") || " "}
       </p>
+      {product.rating != null && (
+        <StarRating rating={product.rating} reviewCount={product.review_count} size="md" />
+      )}
       {product.price != null && (
-        <p className="font-heading text-2xl font-extrabold text-primary">
-          {product.currency ?? "INR"} {product.price}
-        </p>
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <span className="font-heading text-2xl font-extrabold text-primary">
+            {product.currency ?? "INR"} {product.price}
+          </span>
+          {product.mrp != null && discount != null && (
+            <>
+              <span className="text-sm text-muted-foreground line-through">
+                {product.currency ?? "INR"} {product.mrp}
+              </span>
+              <span className="bg-success text-success-foreground text-xs font-extrabold px-2 py-0.5 rounded-sm">
+                {discount}% OFF
+              </span>
+            </>
+          )}
+        </div>
       )}
       {canRedirect ? (
         preview ? (

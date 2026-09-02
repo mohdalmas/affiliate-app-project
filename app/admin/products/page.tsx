@@ -5,6 +5,7 @@ import { SectionHeader, EmptyState, StatusBadge } from "@/components/admin/list-
 import { DeleteButton } from "@/components/admin/delete-button";
 import { ListToolbar, ListPagination } from "@/components/admin/list-toolbar";
 import { Badge } from "@/components/ui/badge";
+import { discountPercent } from "@/lib/pricing";
 import { deleteProduct } from "./actions";
 
 // This page always reads fresh, uncached data keyed by `searchParams`
@@ -26,6 +27,9 @@ type ProductWithPages = {
   brand: string | null;
   price: number | null;
   currency: string | null;
+  mrp: number | null;
+  rating: number | null;
+  review_count: number | null;
   paid_traffic_allowed: boolean;
   status: string;
   commission_percentage: number | null;
@@ -106,6 +110,7 @@ export default async function ProductsPage({
               <tr>
                 <th className="p-3 font-medium">Name</th>
                 <th className="p-3 font-medium">Price</th>
+                <th className="p-3 font-medium">Rating</th>
                 <th className="p-3 font-medium">Commission</th>
                 <th className="p-3 font-medium">Paid traffic?</th>
                 <th className="p-3 font-medium">Status</th>
@@ -132,6 +137,22 @@ export default async function ProductsPage({
                     <td className="p-3">
                       {product.price != null
                         ? `${product.currency ?? "INR"} ${product.price}`
+                        : "—"}
+                      {(() => {
+                        const discount = discountPercent(product.price, product.mrp);
+                        return discount != null ? (
+                          <div className="text-xs text-muted-foreground">
+                            <span className="line-through">
+                              {product.currency ?? "INR"} {product.mrp}
+                            </span>{" "}
+                            <span className="text-success font-medium">-{discount}%</span>
+                          </div>
+                        ) : null;
+                      })()}
+                    </td>
+                    <td className="p-3 text-muted-foreground">
+                      {product.rating != null
+                        ? `${product.rating}★${product.review_count != null ? ` (${product.review_count})` : ""}`
                         : "—"}
                     </td>
                     <td className="p-3 text-muted-foreground">

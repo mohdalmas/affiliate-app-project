@@ -8,6 +8,9 @@ export type RelatedDeal = {
   imageUrl: string | null;
   price: number | null;
   currency: string | null;
+  mrp: number | null;
+  rating: number | null;
+  reviewCount: number | null;
 };
 
 // The single product card, plus a horizontally-scrollable "More in
@@ -36,6 +39,9 @@ export function RelatedProductsLayout({
               imageUrl={item.imageUrl}
               price={item.price}
               currency={item.currency}
+              mrp={item.mrp}
+              rating={item.rating}
+              reviewCount={item.reviewCount}
             />
           ))}
         </DealSection>

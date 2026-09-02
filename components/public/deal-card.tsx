@@ -1,10 +1,13 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { discountPercent } from "@/lib/pricing";
+import { StarRating } from "./star-rating";
 
 // The Template 3 "deal card" (dealsjunction-template3-toolkit): retailer
-// badge, boxed thumbnail, two-line title, price, redirect CTA. Shared by
-// the homepage sections, the related-products rails, and anywhere else a
-// deal needs to render as a card.
+// badge, boxed thumbnail (with a discount badge pinned to its corner),
+// two-line title, star rating, price + struck-through MRP, redirect CTA.
+// Shared by the homepage sections, the related-products rails, and
+// anywhere else a deal needs to render as a card.
 export function DealCard({
   href,
   title,
@@ -12,6 +15,9 @@ export function DealCard({
   imageUrl,
   price,
   currency,
+  mrp,
+  rating,
+  reviewCount,
   highlight = false,
 }: {
   href: string;
@@ -20,8 +26,13 @@ export function DealCard({
   imageUrl?: string | null;
   price?: number | null;
   currency?: string | null;
+  mrp?: number | null;
+  rating?: number | null;
+  reviewCount?: number | null;
   highlight?: boolean;
 }) {
+  const discount = discountPercent(price ?? null, mrp ?? null);
+
   return (
     <Link
       href={href}
@@ -35,7 +46,12 @@ export function DealCard({
             </span>
           </div>
         )}
-        <div className="w-full h-[130px] sm:h-[170px] bg-muted/60 rounded-md flex items-center justify-center overflow-hidden mb-3.5">
+        <div className="relative w-full h-[130px] sm:h-[170px] bg-muted/60 rounded-md flex items-center justify-center overflow-hidden mb-3.5">
+          {discount != null && (
+            <span className="absolute top-1.5 right-1.5 z-10 bg-success text-success-foreground text-[11px] font-extrabold px-1.5 py-0.5 rounded-sm shadow-sm">
+              -{discount}%
+            </span>
+          )}
           {imageUrl ? (
             // eslint-disable-next-line @next/next/no-img-element -- external, unoptimizable product image URLs
             <img
@@ -47,16 +63,28 @@ export function DealCard({
             <span className="text-xs text-muted-foreground">No image</span>
           )}
         </div>
-        <h3 className="font-heading text-sm font-semibold leading-snug line-clamp-2 mb-2 min-h-[2.5em]">
+        <h3 className="font-heading text-sm font-semibold leading-snug line-clamp-2 mb-1.5 min-h-[2.5em]">
           {title}
         </h3>
+        {rating != null && (
+          <div className="mb-2">
+            <StarRating rating={rating} reviewCount={reviewCount} />
+          </div>
+        )}
       </div>
 
       <div>
         {price != null && (
-          <p className="font-heading text-lg font-extrabold text-primary mb-3">
-            {currency ?? "INR"} {price}
-          </p>
+          <div className="flex items-baseline gap-1.5 mb-3 flex-wrap">
+            <span className="font-heading text-lg font-extrabold text-primary">
+              {currency ?? "INR"} {price}
+            </span>
+            {mrp != null && discount != null && (
+              <span className="text-xs text-muted-foreground line-through">
+                {currency ?? "INR"} {mrp}
+              </span>
+            )}
+          </div>
         )}
         <span className="flex items-center justify-center gap-1.5 w-full bg-primary text-primary-foreground text-sm font-bold rounded-md py-2.5 group-hover:bg-secondary-foreground transition-colors">
           View Deal <ArrowUpRight className="size-3.5" />

@@ -40,6 +40,15 @@ not needed yet, not worth the extra setup for a couple of migrations.)
     [`migrations/0008_section_item_position_unique.sql`](migrations/0008_section_item_position_unique.sql) —
     rejects two hand-picked items in the same home section sharing a
     Position instead of silently allowing it
+11. **New query** again, do the same with
+    [`migrations/0009_site_settings.sql`](migrations/0009_site_settings.sql) —
+    adds `site_settings` (a single row, seeded), so the homepage
+    announcement bar is editable from the admin's **Settings** tab
+    instead of hardcoded
+12. **New query** again, do the same with
+    [`migrations/0010_product_ratings_and_mrp.sql`](migrations/0010_product_ratings_and_mrp.sql) —
+    adds `products.rating`/`review_count`/`mrp`, used for the star rating
+    and discount-% display on deal cards and the product page
 
 If a step errors, stop and paste the exact error back — don't re-run it
 (some statements, like `create table`, fail loudly instead of silently if

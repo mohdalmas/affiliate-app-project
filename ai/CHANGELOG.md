@@ -4,6 +4,68 @@ Session-level summary of what shipped, newest first. Not a commit log
 (that's `git log`) — this is "what a returning session needs to know
 happened," at the size of a few bullets per session.
 
+## 2026-09-02 — Star ratings + MRP/discount pricing (not pushed yet)
+
+- Migration `0010`: `products.rating`/`review_count`/`mrp`. **Not
+  additive-safe** — see `PENDING.md`, this one breaks the homepage/product
+  queries (silently, to their empty-state fallback) until it's run,
+  unlike every other migration so far.
+- New `components/public/star-rating.tsx` (partial-fill stars, CSS clip,
+  no library) and `lib/pricing.ts`'s `discountPercent()` (shared,
+  unit-tested — `mrp <= price` or either missing = no discount, not a
+  0%/negative one).
+- `DealCard`: discount badge pinned to the image's top-right corner, plus
+  stars and a struck-through MRP next to the price. `ProductView`: stars
+  + an inline "X% OFF" chip next to the price instead (see `DECISIONS.md`
+  for why the two pages place the badge differently — matched each to its
+  own reference screenshot).
+- Admin: Products gets Rating/Review count/MRP fields (new + edit forms),
+  a Rating column and inline MRP/discount on the list. Full CSV
+  round-trip (export, import, sample template, `combined-csv.ts`
+  validation + tests) for all three new fields.
+
+## 2026-09-02 — Admin-editable announcement bar; admin header logo/email follow-up (not pushed yet)
+
+- New `site_settings` table (migration `0009`, singleton row) +
+  `/admin/settings`: the homepage announcement bar
+  (`announcement_prefix`/`announcement_highlight`) is now admin-editable —
+  `PageShell` reads it (falls back to the original copy if the table's
+  missing/empty), drops the bar entirely if both fields are blank.
+- Admin header logo bumped to `height={56}` (same asset/size as public)
+  with a responsive *displayed* size via `components/logo.tsx`'s new
+  `className` prop — equal to public from `sm` up; see `DECISIONS.md` for
+  why literal equality at every phone width isn't physically possible in
+  a row that also has a hamburger + account controls.
+- `AuthButton`: the email is never `hidden` now (previously disappeared
+  below `sm`) — always visible, truncated progressively by breakpoint
+  instead. `LogoutButton` now `size="sm"` (its only call site is this
+  header).
+
+## 2026-09-02 — Admin header/nav rebuilt as header + sidebar + drawer (not pushed yet)
+
+Reported: "admin panel is still not fixed and broken header positioning."
+Root cause: the header was a fixed `h-24` flex row with no responsive
+handling — a long email (`AuthButton`'s "Hey, {email}!") had nothing
+stopping it from forcing the row wider/taller than the viewport, and the
+nav (`SidebarNav`) was inline-stacked above the page content on any
+screen narrower than `sm`, not a drawer.
+
+- New `components/admin/admin-nav.tsx` replaces `sidebar-nav.tsx`: one
+  `NAV_ITEMS` list feeding three consumers via a small local context —
+  `AdminNavTrigger` (hamburger, header, `lg` and below),
+  `AdminNavDrawer` (slide-in panel + backdrop, `lg` and below, closes
+  itself on navigation), `AdminNavLinks` (the permanent sidebar, `lg` and
+  up). No new dependency — plain `translate-x` CSS, this app has no
+  Dialog/Sheet primitive installed and one nav list doesn't need one.
+- `app/admin/layout.tsx`: fixed `h-16` sticky header (never grows), a
+  `max-w-6xl` content row (permanent `aside` at `lg`+, drawer below it).
+- `AuthButton`: the email greeting is now `hidden` below `sm` and
+  `truncate`d above it — the actual overflow source.
+
+Not committed/pushed — asked to test locally first this time (see
+`DECISIONS.md`'s "audit vs. reproduce" entry from the CSS pass: this one
+*was* a specific, reproducible layout bug, same as the dark-mode logo).
+
 ## 2026-09-02 — Logo disappearing in dark mode
 
 Root cause (this one *was* reproducible, unlike the audit above): the
