@@ -6,15 +6,25 @@ import { DisclosureFooter } from "./disclosure-footer";
 // pages, /privacy, /affiliate-disclosure. Deliberately separate from
 // app/admin/layout.tsx — this is what a real visitor sees, so it has
 // no admin nav, no auth button, nothing that assumes a logged-in user.
+//
+// Header follows Template 3 ("E-Commerce Store Portal Grid") from
+// dealsjunction-template3-toolkit: a slim dark announcement bar over a
+// sticky white navbar carrying the brand mark.
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col">
-      <nav className="border-b h-14 flex items-center px-5">
-        <Link href="/" aria-label="Deals Junction — home">
-          <Logo height={28} priority />
-        </Link>
-      </nav>
-      <main className="flex-1 max-w-5xl w-full mx-auto p-6">{children}</main>
+      <div className="bg-ink text-ink-foreground text-center text-xs font-medium py-1.5 px-4">
+        Fresh deals, verified daily —{" "}
+        <span className="text-primary font-semibold">Shop smart. Save big.</span>
+      </div>
+      <header className="sticky top-0 z-50 bg-card border-b">
+        <nav className="max-w-6xl mx-auto flex items-center h-24 px-5">
+          <Link href="/" aria-label="Deals Junction — home">
+            <Logo height={56} priority />
+          </Link>
+        </nav>
+      </header>
+      <main className="flex-1 max-w-6xl w-full mx-auto p-5">{children}</main>
       <DisclosureFooter />
     </div>
   );

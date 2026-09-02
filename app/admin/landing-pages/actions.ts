@@ -1,9 +1,9 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { str } from "@/lib/admin/form-data";
+import { redirectWithToast } from "@/lib/admin/toast-redirect";
 
 function landingPagePayload(formData: FormData) {
   return {
@@ -37,7 +37,7 @@ export async function createLandingPage(formData: FormData) {
   if (error) throw friendlyError(error);
 
   revalidatePath("/admin", "layout");
-  redirect("/admin/landing-pages");
+  redirectWithToast("/admin/landing-pages", "Landing page created");
 }
 
 export async function updateLandingPage(id: string, formData: FormData) {
@@ -54,7 +54,7 @@ export async function updateLandingPage(id: string, formData: FormData) {
   if (error) throw friendlyError(error);
 
   revalidatePath("/admin", "layout");
-  redirect("/admin/landing-pages");
+  redirectWithToast("/admin/landing-pages", "Landing page saved");
 }
 
 export async function deleteLandingPage(id: string) {

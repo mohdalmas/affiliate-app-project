@@ -1,41 +1,29 @@
-import Link from "next/link";
 import { PageShell } from "@/components/public/page-shell";
+import { getLegalPage, parseLegalBody } from "@/lib/legal-pages";
 
-// DRAFT — a structural starting point, not reviewed legal copy. Amazon's
-// Associates agreement requires clear/conspicuous disclosure (see
-// ARCHITECTURE.md's compliance findings); have this actually reviewed
-// before Stage 17 sends any real traffic here.
-export default function AffiliateDisclosurePage() {
+// Content lives in the `legal_pages` table now, editable from
+// /admin/legal-pages — see lib/legal-pages.ts. Still worth an actual
+// legal review before this site takes real traffic (see ARCHITECTURE.md,
+// Stage 17) — that's now a content edit in the admin, not a code change.
+export const instant = false;
+
+export default async function AffiliateDisclosurePage() {
+  const page = await getLegalPage("affiliate-disclosure");
+  const blocks = parseLegalBody(page.body);
+
   return (
     <PageShell>
       <div className="prose prose-sm max-w-2xl mx-auto flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">Affiliate Disclosure</h1>
-        <p className="text-sm text-muted-foreground bg-accent p-3 rounded-md">
-          Draft placeholder — replace with reviewed copy before this site
-          takes real traffic. See ARCHITECTURE.md, Stage 17.
-        </p>
-        <p>
-          As an Amazon Associate, we earn from qualifying purchases. When
-          you click a product link on this site and buy something on
-          Amazon, we may receive a small commission — at no extra cost to
-          you.
-        </p>
-        <p>
-          We only link to products we&apos;ve genuinely researched. Prices,
-          availability, and offers shown here are set by the merchant
-          (Amazon or otherwise), not by us, and can change after we publish
-          a page.
-        </p>
-        <p>
-          Some links on this site go through a redirect on our own domain
-          (a URL starting with <code>/go/</code>) before reaching the
-          merchant&apos;s site. This lets us measure which pages and ads
-          are useful to visitors — see our{" "}
-          <Link href="/privacy" className="underline">
-            Privacy Policy
-          </Link>{" "}
-          for what that involves.
-        </p>
+        <h1 className="text-2xl font-bold">{page.title}</h1>
+        {blocks.map((block, i) =>
+          block.type === "heading" ? (
+            <h2 key={i} className="text-lg font-semibold">
+              {block.text}
+            </h2>
+          ) : (
+            <p key={i}>{block.text}</p>
+          ),
+        )}
       </div>
     </PageShell>
   );

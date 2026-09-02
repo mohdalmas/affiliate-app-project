@@ -22,6 +22,24 @@ not needed yet, not worth the extra setup for a couple of migrations.)
    [`migrations/0004_add_commission.sql`](migrations/0004_add_commission.sql) —
    adds `commission_percentage`/`commission_notes` to `products`, used by
    the Dashboard's estimated-commission pie chart
+7. **New query** again, do the same with
+   [`migrations/0005_home_sections.sql`](migrations/0005_home_sections.sql) —
+   adds `home_sections`/`home_section_items`, used by the admin's
+   **Home sections** tab to curate named shelves ("Today's Verified Hot
+   Deals", "Last Minute Deals", ...) on the public homepage
+8. **New query** again, do the same with
+   [`migrations/0006_home_section_category.sql`](migrations/0006_home_section_category.sql) —
+   adds `home_sections.category`, so a section can auto-pull every Live
+   product in a category instead of (or alongside) hand-picked items
+9. **New query** again, do the same with
+   [`migrations/0007_legal_pages.sql`](migrations/0007_legal_pages.sql) —
+   adds `legal_pages` (seeded with the site's original draft copy) so
+   `/privacy` and `/affiliate-disclosure` are editable from the admin's
+   **Legal pages** tab instead of hardcoded
+10. **New query** again, do the same with
+    [`migrations/0008_section_item_position_unique.sql`](migrations/0008_section_item_position_unique.sql) —
+    rejects two hand-picked items in the same home section sharing a
+    Position instead of silently allowing it
 
 If a step errors, stop and paste the exact error back — don't re-run it
 (some statements, like `create table`, fail loudly instead of silently if

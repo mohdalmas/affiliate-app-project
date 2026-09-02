@@ -2,6 +2,7 @@ import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SidebarNav } from "@/components/admin/sidebar-nav";
+import { ToastProvider } from "@/components/admin/toast-provider";
 import { Logo } from "@/components/logo";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
@@ -29,31 +30,33 @@ export default function AdminLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="min-h-screen flex flex-col items-center">
-      <div className="flex-1 w-full flex flex-col gap-12 items-center">
-        <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
-          <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <Link href="/admin" aria-label="Deals Junction — Admin" className="flex items-center gap-2">
-              <Logo height={26} priority />
-              <span className="text-muted-foreground text-xs font-medium">Admin</span>
-            </Link>
-            {!hasEnvVars ? (
-              <EnvVarWarning />
-            ) : (
-              <Suspense>
-                <AuthButton />
-              </Suspense>
-            )}
+    <ToastProvider>
+      <main className="min-h-screen flex flex-col items-center">
+        <div className="flex-1 w-full flex flex-col gap-12 items-center">
+          <nav className="w-full flex justify-center border-b border-b-foreground/10 h-24">
+            <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
+              <Link href="/admin" aria-label="Deals Junction — Admin" className="flex items-center gap-3">
+                <Logo height={56} priority />
+                <span className="text-muted-foreground text-xs font-medium">Admin</span>
+              </Link>
+              {!hasEnvVars ? (
+                <EnvVarWarning />
+              ) : (
+                <Suspense>
+                  <AuthButton />
+                </Suspense>
+              )}
+            </div>
+          </nav>
+          <div className="flex-1 w-full flex flex-col sm:flex-row gap-8 max-w-5xl p-5">
+            <SidebarNav />
+            <div className="flex-1 min-w-0">{children}</div>
           </div>
-        </nav>
-        <div className="flex-1 w-full flex flex-col sm:flex-row gap-8 max-w-5xl p-5">
-          <SidebarNav />
-          <div className="flex-1 min-w-0">{children}</div>
+          <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
+            <ThemeSwitcher />
+          </footer>
         </div>
-        <footer className="w-full flex items-center justify-center border-t mx-auto text-center text-xs gap-8 py-16">
-          <ThemeSwitcher />
-        </footer>
-      </div>
-    </main>
+      </main>
+    </ToastProvider>
   );
 }

@@ -13,6 +13,12 @@ campaign. **Read the "Compliance findings" section before doing anything
 with real ads or a real Amazon account** — there's a hard gate (Stage 17)
 that has to happen before any real affiliate link goes live.
 
+Working on this with Claude Code? See [`ai/`](ai/) first — it's the
+current, accurate picture of how this is actually built (conventions,
+decisions, what's pending), kept up to date as the codebase changes.
+`ARCHITECTURE.md` above is the original staged plan and compliance
+research; `ai/CONTEXT.md` is what to read for "how does this work today."
+
 ## What's implemented (Stage 0–14 of the architecture doc — the whole loop)
 
 - The compliance research written up in `ARCHITECTURE.md`
