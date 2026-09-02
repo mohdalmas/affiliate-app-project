@@ -1,20 +1,27 @@
 import Image from "next/image";
 
-// The brand mark (public/logo.png) already bakes in the wordmark and
-// tagline, so this is just a sized, aspect-ratio-correct <Image> wrapper —
-// used in both the public site header and the admin header, so there's one
-// place to change if the logo file ever changes.
-export function Logo({ height = 32, priority }: { height?: number; priority?: boolean }) {
-  // Source file is 1320x1000 — keep that ratio at whatever height is asked for.
-  const width = Math.round((height * 1320) / 1000);
+// The brand mark: cart glyph + "Deals Junction" wordmark + tagline, all
+// baked into the SVG (public/logo.svg / logo-dark.svg) so it always renders
+// crisp at any size. "light" (ink-on-transparent) is for the white navbar;
+// "dark" (white-on-transparent) is for the dark footer. Source viewBox is
+// 480x120 — keep that ratio at whatever height is asked for.
+export function Logo({
+  height = 32,
+  variant = "light",
+  priority,
+}: {
+  height?: number;
+  variant?: "light" | "dark";
+  priority?: boolean;
+}) {
+  const width = Math.round((height * 480) / 120);
   return (
     <Image
-      src="/logo.png"
+      src={variant === "dark" ? "/logo-dark.svg" : "/logo.svg"}
       alt="Deals Junction"
       height={height}
       width={width}
       priority={priority}
-      className="rounded-sm"
     />
   );
 }

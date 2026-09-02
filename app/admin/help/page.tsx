@@ -115,6 +115,36 @@ yourdomain.com/[slug] works, and yourdomain.com/go/[slug] redirects`}
 
         <div className="flex flex-col gap-1">
           <h3 className="font-medium">
+            <Link href="/admin/sections" className="underline">Home sections</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Curates the homepage itself — each section is a named shelf
+            (&quot;Today&apos;s Verified Hot Deals&quot;, &quot;Last Minute
+            Deals&quot;, ...) holding an ordered pick of Landing pages.
+            Sections render top to bottom by Position; a section only shows
+            up once it&apos;s <strong>Live</strong> and has at least one item
+            whose landing page and product are both Live. No sections set up
+            yet? The homepage falls back to one shelf of every Live landing
+            page, same as before this existed.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <h3 className="font-medium">
+            <Link href="/admin/legal-pages" className="underline">Legal pages</Link>
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Edits the copy on the public <code className="text-xs bg-muted px-1 py-0.5 rounded">/privacy</code>{" "}
+            and <code className="text-xs bg-muted px-1 py-0.5 rounded">/affiliate-disclosure</code>{" "}
+            pages — no code change needed. Plain text: blank line between
+            paragraphs, a line starting with &quot;## &quot; becomes a
+            subheading. Ships with draft copy — get it actually reviewed
+            before this site takes real traffic (see ARCHITECTURE.md, Stage 17).
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <h3 className="font-medium">
             <Link href="/admin" className="underline">Dashboard</Link>
           </h3>
           <p className="text-sm text-muted-foreground">
@@ -141,7 +171,9 @@ yourdomain.com/[slug] works, and yourdomain.com/go/[slug] redirects`}
         <ul className="list-disc list-inside flex flex-col gap-2">
           <li>
             <code className="text-xs bg-muted px-1 py-0.5 rounded">yourdomain.com/</code> —
-            the homepage: a grid of every Live product with a Live landing page.
+            the homepage: the Live{" "}
+            <Link href="/admin/sections" className="underline">Home sections</Link>{" "}
+            you&apos;ve set up, in order.
           </li>
           <li>
             <code className="text-xs bg-muted px-1 py-0.5 rounded">yourdomain.com/[slug]</code> —
@@ -250,7 +282,10 @@ yourdomain.com/[slug] works, and yourdomain.com/go/[slug] redirects`}
         <ul className="list-disc list-inside flex flex-col gap-1 text-sm text-muted-foreground">
           <li>Never put a real affiliate URL into a Product until Stage 17 (see ARCHITECTURE.md) is fully closed out.</li>
           <li>Never check &quot;Paid traffic allowed&quot; on a real product without written confirmation from Amazon Associates support.</li>
-          <li>&quot;/privacy&quot; and &quot;/affiliate-disclosure&quot; are drafts — get them reviewed before this site takes real traffic.</li>
+          <li>
+            <Link href="/admin/legal-pages" className="underline">/privacy and /affiliate-disclosure</Link>{" "}
+            still hold draft copy — get them reviewed (and edit them there) before this site takes real traffic.
+          </li>
         </ul>
         <p className="text-sm text-muted-foreground">
           Full detail: see <code className="text-xs bg-muted px-1 py-0.5 rounded">ARCHITECTURE.md</code>{" "}

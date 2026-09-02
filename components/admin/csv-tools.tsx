@@ -10,6 +10,14 @@ export function CsvTools() {
   return (
     <div className="flex flex-col gap-2 border rounded-md p-3 bg-muted/30">
       <div className="flex flex-wrap items-center gap-3 text-sm">
+        <a
+          href="/sample-data/product-import-template.csv"
+          download
+          className="underline hover:no-underline"
+        >
+          Download sample CSV
+        </a>
+        <span className="text-muted-foreground">·</span>
         <Link href="/admin/export" className="underline hover:no-underline">
           Export CSV
         </Link>
@@ -33,8 +41,13 @@ export function CsvTools() {
         </form>
       </div>
       <p className="text-xs text-muted-foreground">
-        One CSV covers both Products and Landing pages together — required
-        columns: product_name (everything else is optional, including every
+        New to this? Start from{" "}
+        <a href="/sample-data/product-import-template.csv" download className="underline">
+          the sample CSV
+        </a>{" "}
+        above — three example rows showing the format. One CSV covers both
+        Products and Landing pages together — required columns:
+        product_name (everything else is optional, including every
         landing_page_* column, which you can leave blank for a product with
         no landing page yet). Leave the id columns blank, or leave them out
         of the file entirely, to create new rows — an id is generated

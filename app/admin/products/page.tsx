@@ -117,6 +117,7 @@ export default async function ProductsPage({
                 const livePage = product.landing_pages.find((p) => p.status === "live");
                 const isFullyLive = !!livePage && product.status === "live";
                 const previewablePage = livePage ?? product.landing_pages[0];
+                const blockedBySlug = livePage?.slug;
 
                 return (
                   <tr key={product.id} className="border-t">
@@ -175,7 +176,12 @@ export default async function ProductsPage({
                         </Link>
                         <DeleteButton
                           onDelete={deleteProduct.bind(null, product.id)}
-                          confirmMessage={`Delete "${product.name}"? Any landing pages pointing at it will stop working.`}
+                          confirmMessage={`Delete "${product.name}"? Any Draft/Archived landing pages pointing at it are deleted too.`}
+                          disabledReason={
+                            blockedBySlug
+                              ? `Can't delete — its landing page /${blockedBySlug} is Live. Set it to Draft (or delete it) first.`
+                              : undefined
+                          }
                         />
                       </div>
                     </td>

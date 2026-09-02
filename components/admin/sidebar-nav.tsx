@@ -9,6 +9,8 @@ const NAV_ITEMS = [
   { href: "/admin/help", label: "Help & workflow" },
   { href: "/admin/products", label: "Products" },
   { href: "/admin/landing-pages", label: "Landing pages" },
+  { href: "/admin/sections", label: "Home sections" },
+  { href: "/admin/legal-pages", label: "Legal pages" },
   { href: "/admin/import-export", label: "Import / Export" },
 ];
 

@@ -4,6 +4,7 @@ import { recordEvent, utmParamsFrom } from "@/lib/tracking/record-event";
 import { getSessionId } from "@/lib/tracking/session";
 import { PageShell } from "@/components/public/page-shell";
 import { ProductView, type PreviewableProduct } from "@/components/public/product-view";
+import { RelatedProductsLayout, type RelatedDeal } from "@/components/public/related-products";
 
 // This reads cookies() (the session id) and hits the database on every
 // request, and it's the whole point of the page (recording a product_view)
@@ -18,6 +19,47 @@ type LandingPageRow = {
   status: string;
   product: PreviewableProduct & { id: string };
 };
+
+type RelatedRow = {
+  slug: string;
+  name: string;
+  product: {
+    name: string;
+    brand: string | null;
+    price: number | null;
+    currency: string | null;
+    image_url: string | null;
+  } | null;
+};
+
+// Up to 12 other Live products in the same category, for the horizontally
+// scrollable "More in category" shelf below the main product — see
+// components/public/related-products.tsx.
+async function getRelatedDeals(
+  supabase: ReturnType<typeof createServiceClient>,
+  category: string,
+  excludeSlug: string,
+): Promise<RelatedDeal[]> {
+  const { data } = await supabase
+    .from("landing_pages")
+    .select("slug, name, product:products!inner(name, brand, price, currency, image_url, category, status)")
+    .eq("status", "live")
+    .eq("product.status", "live")
+    .eq("product.category", category)
+    .neq("slug", excludeSlug)
+    .order("created_at", { ascending: false })
+    .limit(12);
+  const rows = data as unknown as RelatedRow[] | null;
+
+  return (rows ?? []).map((row) => ({
+    slug: row.slug,
+    title: row.product?.name ?? row.name,
+    brand: row.product?.brand ?? null,
+    imageUrl: row.product?.image_url ?? null,
+    price: row.product?.price ?? null,
+    currency: row.product?.currency ?? null,
+  }));
+}
 
 function toSearchParams(
   search: Record<string, string | string[] | undefined>,
@@ -75,9 +117,15 @@ export default async function PublicLandingPage({
     ...utm,
   });
 
+  const related = landingPage.product?.category
+    ? await getRelatedDeals(supabase, landingPage.product.category, landingPage.slug)
+    : [];
+
   return (
     <PageShell>
-      <ProductView product={landingPage.product} slug={landingPage.slug} />
+      <RelatedProductsLayout related={related} categoryLabel={landingPage.product?.category ?? null}>
+        <ProductView product={landingPage.product} slug={landingPage.slug} />
+      </RelatedProductsLayout>
     </PageShell>
   );
 }
