@@ -4,6 +4,21 @@ Session-level summary of what shipped, newest first. Not a commit log
 (that's `git log`) — this is "what a returning session needs to know
 happened," at the size of a few bullets per session.
 
+## 2026-09-02 — Logo disappearing in dark mode
+
+Root cause (this one *was* reproducible, unlike the audit above): the
+header/admin-nav `Logo` defaulted to `variant="light"` (dark ink text) —
+fine for its `bg-card` background in light mode, but `bg-card` itself
+flips dark under `.dark` (system dark mode included, since
+`app/layout.tsx`'s `ThemeProvider` uses `defaultTheme="system"` +
+`enableSystem`), leaving dark-ink text on a now-dark background. Fixed by
+adding an `"auto"` variant (new default) to `components/logo.tsx`: renders
+both SVGs, toggled by Tailwind's `dark:` variant (`dark:hidden` /
+`hidden dark:block`) — pure CSS, no `useTheme()` hook, no hydration-flash
+risk. `DisclosureFooter`'s explicit `variant="dark"` is untouched — its
+`bg-ink` background is a deliberate constant, not theme-relative (see the
+"ink" token decision), so it was never actually broken.
+
 ## 2026-09-02 — Cross-browser/mobile CSS hardening
 
 Reported: "CSS breaking in other browsers/laptops/mobile" — no repro
