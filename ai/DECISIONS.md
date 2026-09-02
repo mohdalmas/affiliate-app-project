@@ -1,5 +1,19 @@
 # Decisions
 
+## 2026-09-02 — "CSS breaking in other browsers" handled as an audit, not a repro fix
+
+Reported with no browser/device/screenshot. There's no real-browser testing
+tool available in this dev environment (no installed Playwright/
+chromium-cli — confirmed, not assumed), so this couldn't be reproduced
+directly. Response was a targeted audit of the diff for known
+cross-browser CSS risk patterns (`aspect-ratio` without a fallback,
+`dvh`/`svh` units, `:has()`/container queries, missing `browserslist`) and
+fixing what that audit actually found, rather than guessing at one root
+cause or claiming a fix that wasn't verified. If this comes up again: ask
+for a screenshot and the specific browser/OS/device first — it narrows
+"CSS breaking" from "audit everything" to "check this one thing" and
+avoids repeating a scattershot fix.
+
 Dated, one paragraph each: what was decided, and why — so a later session
 doesn't silently "fix" something that was actually a deliberate tradeoff.
 Newest first. Add to this whenever a change involves a real tradeoff, not
