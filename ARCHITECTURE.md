@@ -1,4 +1,4 @@
-# Affiliate Lab — Architecture
+# Deals Junction — Architecture
 
 ## Concept
 

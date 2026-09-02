@@ -28,6 +28,7 @@ type ProductWithPages = {
   currency: string | null;
   paid_traffic_allowed: boolean;
   status: string;
+  commission_percentage: number | null;
   // Reverse relation (landing_pages.product_id -> products.id) — genuinely
   // one-to-many, so this one really is an array, unlike the to-one embeds
   // elsewhere in this app.
@@ -105,6 +106,7 @@ export default async function ProductsPage({
               <tr>
                 <th className="p-3 font-medium">Name</th>
                 <th className="p-3 font-medium">Price</th>
+                <th className="p-3 font-medium">Commission</th>
                 <th className="p-3 font-medium">Paid traffic?</th>
                 <th className="p-3 font-medium">Status</th>
                 <th className="p-3 font-medium text-right">Actions</th>
@@ -129,6 +131,11 @@ export default async function ProductsPage({
                     <td className="p-3">
                       {product.price != null
                         ? `${product.currency ?? "INR"} ${product.price}`
+                        : "—"}
+                    </td>
+                    <td className="p-3 text-muted-foreground">
+                      {product.commission_percentage != null
+                        ? `${product.commission_percentage}%`
                         : "—"}
                     </td>
                     <td className="p-3">

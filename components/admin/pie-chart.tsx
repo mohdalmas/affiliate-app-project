@@ -54,11 +54,15 @@ function wedgePath(
 
 export function PieChart({
   data,
-  size = 160,
+  size = 260,
+  legendMaxHeight = 260,
   unit = "",
 }: {
   data: PieSlice[];
   size?: number;
+  // Caps how tall the legend list can grow before it scrolls internally —
+  // keeps a long product list from pushing the rest of the dashboard down.
+  legendMaxHeight?: number;
   // A plain string, not a function — this is a Client Component, and a
   // function prop passed in from a Server Component (like app/admin/page.tsx)
   // can't cross that boundary (it isn't serializable over the RSC wire
@@ -79,7 +83,7 @@ export function PieChart({
   });
 
   return (
-    <div className="flex flex-wrap items-center gap-6">
+    <div className="flex flex-wrap items-start gap-6">
       {total === 0 ? (
         <div
           role="img"
@@ -138,7 +142,10 @@ export function PieChart({
           )}
         </div>
       )}
-      <div className="flex flex-col gap-2 text-sm min-w-0">
+      <div
+        className="flex flex-col gap-1 text-sm min-w-0 w-full sm:w-72 overflow-y-auto pr-2"
+        style={{ maxHeight: legendMaxHeight }}
+      >
         {data.length === 0 ? (
           <p className="text-muted-foreground">No data yet.</p>
         ) : (
@@ -147,7 +154,7 @@ export function PieChart({
               key={d.label}
               onMouseEnter={() => setHovered(i)}
               onMouseLeave={() => setHovered((h) => (h === i ? null : h))}
-              className={`flex items-center gap-2 rounded px-1 -mx-1 cursor-default transition-colors ${
+              className={`flex items-center gap-2 rounded px-1 py-0.5 -mx-1 cursor-default transition-colors ${
                 hovered === i ? "bg-accent" : ""
               }`}
             >
@@ -157,12 +164,12 @@ export function PieChart({
                 style={{ background: PALETTE[i % PALETTE.length] }}
               />
               <span className="font-medium truncate max-w-[10rem]">{d.label}</span>
-              <span className="text-muted-foreground">
+              <span className="text-muted-foreground whitespace-nowrap">
                 {formatValue(d.value)}
                 {total > 0 && ` (${((d.value / total) * 100).toFixed(1)}%)`}
               </span>
               {d.detail && (
-                <span className="text-xs text-muted-foreground">· {d.detail}</span>
+                <span className="text-xs text-muted-foreground truncate">· {d.detail}</span>
               )}
             </div>
           ))

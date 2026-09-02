@@ -2,6 +2,7 @@ import { AuthButton } from "@/components/auth-button";
 import { EnvVarWarning } from "@/components/env-var-warning";
 import { ThemeSwitcher } from "@/components/theme-switcher";
 import { SidebarNav } from "@/components/admin/sidebar-nav";
+import { Logo } from "@/components/logo";
 import { hasEnvVars } from "@/lib/utils";
 import Link from "next/link";
 import { Suspense } from "react";
@@ -32,8 +33,9 @@ export default function AdminLayout({
       <div className="flex-1 w-full flex flex-col gap-12 items-center">
         <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
           <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
-            <Link href="/admin" className="font-semibold">
-              Affiliate Lab — Admin
+            <Link href="/admin" aria-label="Deals Junction — Admin" className="flex items-center gap-2">
+              <Logo height={26} priority />
+              <span className="text-muted-foreground text-xs font-medium">Admin</span>
             </Link>
             {!hasEnvVars ? (
               <EnvVarWarning />

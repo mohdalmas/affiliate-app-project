@@ -15,7 +15,7 @@ export default function HomePage() {
     <PageShell>
       <div className="flex flex-col gap-8">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold">Affiliate Lab</h1>
+          <h1 className="text-3xl font-bold">Deals Junction</h1>
           <p className="text-muted-foreground">
             Smart picks for everyday products.
           </p>

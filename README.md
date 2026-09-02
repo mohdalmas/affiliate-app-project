@@ -1,4 +1,4 @@
-# Affiliate Lab — V1 (Meta → your site → Amazon Associates)
+# Deals Junction — V1 (Meta → your site → Amazon Associates)
 
 A tracked affiliate funnel: Meta (Facebook/Instagram) ads point at pages on
 **your own domain**, which record the click and then redirect to the real

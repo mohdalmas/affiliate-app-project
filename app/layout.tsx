@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
@@ -9,12 +9,16 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "Deals Junction",
+  description: "Shop smart. Save big.",
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Poppins — the bold, rounded sans used in the Deals Junction logo
+// (public/logo.png). Applied on <body> below so every page and the admin
+// dashboard share the exact same typeface, not just the logo mark itself.
+const poppins = Poppins({
+  variable: "--font-poppins",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
   subsets: ["latin"],
 });
@@ -26,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+      <body className={`${poppins.className} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
