@@ -13,5 +13,11 @@ export function LogoutButton() {
     router.push("/auth/login");
   };
 
-  return <Button onClick={logout}>Logout</Button>;
+  // size="sm" — its one call site is the admin header, which is already
+  // sharing that row with a hamburger, the logo, and the account email.
+  return (
+    <Button size="sm" onClick={logout}>
+      Logout
+    </Button>
+  );
 }

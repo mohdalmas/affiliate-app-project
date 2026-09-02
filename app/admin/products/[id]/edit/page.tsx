@@ -48,6 +48,11 @@ export default async function EditProductPage({
             <TextField name="price" label="Price" type="number" step="0.01" defaultValue={product.price} />
             <TextField name="currency" label="Currency" defaultValue={product.currency} />
           </div>
+          <div className="grid grid-cols-2 gap-4">
+            <TextField name="mrp" label="MRP (original price)" type="number" step="0.01" defaultValue={product.mrp} />
+            <TextField name="rating" label="Rating (0–5)" type="number" step="0.1" defaultValue={product.rating} />
+          </div>
+          <TextField name="review_count" label="Review count" type="number" defaultValue={product.review_count} />
           <TextField name="image_url" label="Image URL" type="url" defaultValue={product.image_url} />
           <TextField name="affiliate_url" label="Affiliate URL" type="url" defaultValue={product.affiliate_url} />
           <CheckboxField

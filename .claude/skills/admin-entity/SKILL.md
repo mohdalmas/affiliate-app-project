@@ -130,7 +130,8 @@ export const <ENTITY>_HELP_FIELDS = [
 ## 6. Wire it in
 
 - Add `{ href: "/admin/<entity>", label: "<Entity>" }` to
-  `components/admin/sidebar-nav.tsx`'s `NAV_ITEMS`.
+  `components/admin/admin-nav.tsx`'s `NAV_ITEMS` — the one list that
+  feeds both the permanent sidebar (`lg` and up) and the mobile drawer.
 - Add a short section to `app/admin/help/page.tsx` (under "The N admin
   pages" — bump the heading's count) describing what it's for, matching
   the tone of the existing entries.

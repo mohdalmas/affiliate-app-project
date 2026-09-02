@@ -17,6 +17,9 @@ export type ParsedProductFields = {
   category: string | null;
   price: number | null;
   currency: string;
+  mrp: number | null;
+  rating: number | null;
+  review_count: number | null;
   image_url: string | null;
   affiliate_url: string | null;
   paid_traffic_allowed: boolean;
@@ -41,6 +44,35 @@ function cell(header: string[], row: string[], column: string): string {
   return index === -1 ? "" : (row[index] ?? "").trim();
 }
 
+// Shared "blank is fine, otherwise must be a number in range" check for
+// every optional numeric column (price already has its own simpler
+// version above it, kept separate since it has no range) — used by
+// commission %, rating, review count, and MRP below.
+type NumberResult = { ok: true; value: number | null } | { ok: false; error: string };
+
+function parseOptionalNumber(
+  raw: string,
+  fieldName: string,
+  range?: { min?: number; max?: number },
+): NumberResult {
+  if (raw === "") return { ok: true, value: null };
+  const value = Number(raw);
+  if (Number.isNaN(value)) {
+    return { ok: false, error: `${fieldName} "${raw}" isn't a number` };
+  }
+  const { min, max } = range ?? {};
+  if (min != null && max != null && (value < min || value > max)) {
+    return { ok: false, error: `${fieldName} "${raw}" must be between ${min} and ${max}` };
+  }
+  if (min != null && value < min) {
+    return { ok: false, error: `${fieldName} "${raw}" must be at least ${min}` };
+  }
+  if (max != null && value > max) {
+    return { ok: false, error: `${fieldName} "${raw}" must be at most ${max}` };
+  }
+  return { ok: true, value };
+}
+
 export function parseCombinedRow(header: string[], row: string[]): ParsedRow {
   const get = (column: string) => cell(header, row, column);
 
@@ -61,23 +93,28 @@ export function parseCombinedRow(header: string[], row: string[]): ParsedRow {
     return { ok: false, error: `product_price "${priceRaw}" isn't a number` };
   }
 
-  const commissionRaw = get("product_commission_percentage");
-  const commissionPercentage = commissionRaw === "" ? null : Number(commissionRaw);
-  if (commissionPercentage != null && Number.isNaN(commissionPercentage)) {
-    return {
-      ok: false,
-      error: `product_commission_percentage "${commissionRaw}" isn't a number`,
-    };
-  }
-  if (
-    commissionPercentage != null &&
-    (commissionPercentage < 0 || commissionPercentage > 100)
-  ) {
-    return {
-      ok: false,
-      error: `product_commission_percentage "${commissionRaw}" must be between 0 and 100`,
-    };
-  }
+  const mrpResult = parseOptionalNumber(get("product_mrp"), "product_mrp", { min: 0 });
+  if (!mrpResult.ok) return mrpResult;
+
+  const ratingResult = parseOptionalNumber(get("product_rating"), "product_rating", {
+    min: 0,
+    max: 5,
+  });
+  if (!ratingResult.ok) return ratingResult;
+
+  const reviewCountResult = parseOptionalNumber(
+    get("product_review_count"),
+    "product_review_count",
+    { min: 0 },
+  );
+  if (!reviewCountResult.ok) return reviewCountResult;
+
+  const commissionResult = parseOptionalNumber(
+    get("product_commission_percentage"),
+    "product_commission_percentage",
+    { min: 0, max: 100 },
+  );
+  if (!commissionResult.ok) return commissionResult;
 
   const product: ParsedProductFields = {
     id: get("product_id") || null,
@@ -86,13 +123,16 @@ export function parseCombinedRow(header: string[], row: string[]): ParsedRow {
     category: get("product_category") || null,
     price,
     currency: get("product_currency") || "INR",
+    mrp: mrpResult.value,
+    rating: ratingResult.value,
+    review_count: reviewCountResult.value,
     image_url: get("product_image_url") || null,
     affiliate_url: get("product_affiliate_url") || null,
     paid_traffic_allowed: TRUTHY_VALUES.includes(
       get("product_paid_traffic_allowed").toLowerCase(),
     ),
     status: productStatus,
-    commission_percentage: commissionPercentage,
+    commission_percentage: commissionResult.value,
     commission_notes: get("product_commission_notes") || null,
   };
 

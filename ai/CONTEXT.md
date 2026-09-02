@@ -27,7 +27,12 @@ form state library anywhere.
 ```
 products            — what's promoted: name, brand, category, price,
                        image_url, affiliate_url, paid_traffic_allowed,
-                       status (draft/live/archived), commission fields.
+                       status (draft/live/archived), commission fields,
+                       mrp/rating/review_count (migration 0010 — see
+                       `lib/pricing.ts`'s discountPercent() and
+                       components/public/star-rating.tsx). Unlike the
+                       other post-0004 migrations, this one is NOT
+                       additive-safe — see PENDING.md.
 landing_pages        — the public /[slug] page: slug, product_id (required,
                        cascades on product delete), status (draft/live/archived).
                        Business rule (app-level, not a DB constraint — see
@@ -45,6 +50,12 @@ home_section_items    — hand-picked (section, landing_page) pairs with a
                        items in one section may share a position).
 legal_pages          — slug ('privacy' | 'affiliate-disclosure'), title,
                        body (plain text, see "Legal page body format" below).
+site_settings        — always exactly one row (id pinned to 'default').
+                       Site-wide text with nowhere else to live — so far
+                       just announcement_prefix/announcement_highlight
+                       (the homepage announcement bar). See DECISIONS.md
+                       for why this is named columns, not a generic
+                       key-value table.
 ```
 
 RLS posture, everywhere: `authenticated full access` (this is a

@@ -28,6 +28,9 @@ type RelatedRow = {
     brand: string | null;
     price: number | null;
     currency: string | null;
+    mrp: number | null;
+    rating: number | null;
+    review_count: number | null;
     image_url: string | null;
   } | null;
 };
@@ -42,7 +45,9 @@ async function getRelatedDeals(
 ): Promise<RelatedDeal[]> {
   const { data } = await supabase
     .from("landing_pages")
-    .select("slug, name, product:products!inner(name, brand, price, currency, image_url, category, status)")
+    .select(
+      "slug, name, product:products!inner(name, brand, price, currency, mrp, rating, review_count, image_url, category, status)",
+    )
     .eq("status", "live")
     .eq("product.status", "live")
     .eq("product.category", category)
@@ -58,6 +63,9 @@ async function getRelatedDeals(
     imageUrl: row.product?.image_url ?? null,
     price: row.product?.price ?? null,
     currency: row.product?.currency ?? null,
+    mrp: row.product?.mrp ?? null,
+    rating: row.product?.rating ?? null,
+    reviewCount: row.product?.review_count ?? null,
   }));
 }
 
@@ -94,7 +102,7 @@ export default async function PublicLandingPage({
   const { data } = await supabase
     .from("landing_pages")
     .select(
-      "id, name, slug, status, product:products(id, name, brand, category, price, currency, image_url, affiliate_url, paid_traffic_allowed, status)",
+      "id, name, slug, status, product:products(id, name, brand, category, price, currency, mrp, rating, review_count, image_url, affiliate_url, paid_traffic_allowed, status)",
     )
     .eq("slug", slug)
     .eq("status", "live")

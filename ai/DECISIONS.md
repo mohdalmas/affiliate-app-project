@@ -1,5 +1,59 @@
 # Decisions
 
+## 2026-09-02 — Discount badge: pinned to the image on cards, inline near price on the product page
+
+Asked for the discount badge "on the top right corner of product image"
+for the homepage/grid — implemented literally as an absolutely-positioned
+badge over `DealCard`'s thumbnail. The single product page
+(`ProductView`) instead shows it as a small "X% OFF" chip inline next to
+the price/MRP, not pinned to the image — the user's own reference
+screenshot for the *product detail* page showed the discount as inline
+text near the price (Amazon's pattern), not on the image, while their
+*grid* reference showed it on the image corner (also Amazon's pattern,
+for grid thumbnails). Matched each page to its own reference rather than
+using one placement everywhere.
+
+## 2026-09-02 — Star rating: two-layer CSS clip, not a library
+
+`components/public/star-rating.tsx` renders a partial star fill (e.g.
+4.3 stars) with a background row of outline stars and a foreground row
+of filled stars clipped to `(rating/5)*100%` width — the standard
+"overlay + overflow:hidden" trick — rather than a rating-widget
+dependency. Same reasoning as everywhere else in this app: one small,
+static piece of UI doesn't earn a new dependency.
+
+## 2026-09-02 — Admin header logo: equal to public from `sm` up, smaller only below it
+
+Asked for the admin header logo to be "equal to the public site" (both
+use `height={56}`, the same asset). Public's header has *only* the logo
+in that row; admin's also has a hamburger trigger and account controls
+(email + Logout) in the same row. Literal pixel-equality at every width
+is a hard physical conflict on the narrowest phones — a 56px-tall logo is
+224px wide (fixed 4:1 aspect ratio), which alone consumes most of a
+~350px mobile viewport once you add a hamburger button, leaving no room
+for even a heavily-truncated email or a Logout button. Resolved by
+scaling the *displayed* size responsively via `components/logo.tsx`'s new
+`className` prop (`h-10 sm:h-14 w-auto` — 40px below `sm`, 56px from `sm`
+up, i.e. equal to public everywhere except phone-portrait widths), rather
+than silently ignoring the ask or breaking the header again. If asked for
+literal equality at every width in the future: the only way to actually
+get there is removing something else from that row on small screens
+(e.g. moving account info into the drawer instead of the header) — flagged,
+not implemented, since it wasn't asked for.
+
+## 2026-09-02 — Site-wide editable text: one `site_settings` singleton row, not a generic key-value table
+
+The homepage announcement bar became admin-editable
+(`0009_site_settings.sql`) as two named columns
+(`announcement_prefix`/`announcement_highlight`) on a single pinned-id
+row, not a generic `settings(key text, value text)` table. A generic
+table would handle "one more setting" with no migration, but loses typed
+columns, per-field `NOT NULL`/`check` constraints, and a form that's just
+two `TextField`s instead of a dynamic key list — not worth it for what is,
+so far, one setting. Revisit as a real key-value table only once there are
+enough of these that a migration-per-setting is actually the bottleneck,
+not before.
+
 ## 2026-09-02 — "CSS breaking in other browsers" handled as an audit, not a repro fix
 
 Reported with no browser/device/screenshot. There's no real-browser testing

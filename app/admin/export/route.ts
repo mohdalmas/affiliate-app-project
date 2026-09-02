@@ -14,6 +14,9 @@ const COLUMNS = [
   "product_category",
   "product_price",
   "product_currency",
+  "product_mrp",
+  "product_rating",
+  "product_review_count",
   "product_image_url",
   "product_affiliate_url",
   "product_paid_traffic_allowed",
@@ -33,6 +36,9 @@ type ProductRow = {
   category: string | null;
   price: number | null;
   currency: string | null;
+  mrp: number | null;
+  rating: number | null;
+  review_count: number | null;
   image_url: string | null;
   affiliate_url: string | null;
   paid_traffic_allowed: boolean;
@@ -57,7 +63,7 @@ export async function GET() {
       supabase
         .from("products")
         .select(
-          "id, name, brand, category, price, currency, image_url, affiliate_url, paid_traffic_allowed, status, commission_percentage, commission_notes",
+          "id, name, brand, category, price, currency, mrp, rating, review_count, image_url, affiliate_url, paid_traffic_allowed, status, commission_percentage, commission_notes",
         )
         .order("name"),
       supabase.from("landing_pages").select("id, name, slug, status, product_id").order("name"),
@@ -88,6 +94,9 @@ export async function GET() {
         product.category,
         product.price,
         product.currency,
+        product.mrp,
+        product.rating,
+        product.review_count,
         product.image_url,
         product.affiliate_url,
         product.paid_traffic_allowed,

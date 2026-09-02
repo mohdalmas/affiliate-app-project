@@ -17,6 +17,20 @@ wired in here. Ask the user to confirm before assuming any schema below
       on `home_section_items` — **will fail if any existing section
       already has two hand-picked items sharing a position**; fix those
       rows in the Table Editor first if so.
+- [ ] `0009_site_settings.sql` — `site_settings` (single row, seeded) —
+      the homepage announcement bar, editable at `/admin/settings`.
+- [ ] `0010_product_ratings_and_mrp.sql` — `products.rating`/
+      `review_count`/`mrp` — **not additive-safe like the others**: every
+      public product query now explicitly selects these columns (deal
+      cards, the product page, related-products), so until this migration
+      runs, those queries fail outright (Postgres rejects a SELECT
+      naming a column that doesn't exist — this isn't caught/logged
+      anywhere, it just silently returns no rows) and **the homepage and
+      every product page show their empty-state fallback, even though
+      products/landing pages exist and are Live.** Confirmed this by
+      literally reverting to pre-migration code and seeing real deal
+      cards reappear. Run this one before anything else on the list if
+      the homepage looks unexpectedly empty.
 
 If asked to build a feature that touches `home_sections`/`legal_pages`,
 don't assume the tables exist yet — the app code already has graceful

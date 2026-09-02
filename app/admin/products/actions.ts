@@ -12,6 +12,9 @@ function productPayload(formData: FormData) {
     category: str(formData, "category"),
     price: num(formData, "price"),
     currency: str(formData, "currency") ?? "INR",
+    mrp: num(formData, "mrp"),
+    rating: num(formData, "rating"),
+    review_count: num(formData, "review_count"),
     image_url: str(formData, "image_url"),
     affiliate_url: str(formData, "affiliate_url"),
     // Defaults to false — see ARCHITECTURE.md's compliance findings. Never

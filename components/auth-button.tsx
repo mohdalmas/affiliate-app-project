@@ -12,8 +12,17 @@ export async function AuthButton() {
   const user = data?.claims;
 
   return user ? (
-    <div className="flex items-center gap-4">
-      Hey, {user.email}!
+    // Always visible — never `hidden` at any width, so it can't just
+    // disappear (or read as "gone behind the button"). `min-w-0` + a
+    // progressively wider `max-w-*` is what actually constrains it: the
+    // email truncates with an ellipsis instead of pushing the Logout
+    // button off-screen or wrapping the header taller.
+    <div className="flex items-center gap-2 sm:gap-3">
+      <span className="min-w-0 max-w-[92px] sm:max-w-[180px] md:max-w-[260px] truncate text-xs sm:text-sm text-muted-foreground">
+        <span className="hidden sm:inline">Hey, </span>
+        {user.email}
+        <span className="hidden sm:inline">!</span>
+      </span>
       <LogoutButton />
     </div>
   ) : (

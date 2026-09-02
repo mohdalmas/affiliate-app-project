@@ -29,7 +29,7 @@ export default async function PreviewPage({
   const { data } = await supabase
     .from("landing_pages")
     .select(
-      "id, name, slug, status, product:products(name, brand, category, price, currency, image_url, affiliate_url, paid_traffic_allowed, status)",
+      "id, name, slug, status, product:products(name, brand, category, price, currency, mrp, rating, review_count, image_url, affiliate_url, paid_traffic_allowed, status)",
     )
     .eq("slug", slug)
     .maybeSingle();

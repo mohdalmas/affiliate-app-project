@@ -8,6 +8,9 @@ const HEADER = [
   "product_category",
   "product_price",
   "product_currency",
+  "product_mrp",
+  "product_rating",
+  "product_review_count",
   "product_image_url",
   "product_affiliate_url",
   "product_paid_traffic_allowed",
@@ -155,6 +158,56 @@ describe("parseCombinedRow", () => {
     expect(result).toEqual({
       ok: false,
       error: 'product_commission_percentage "150" must be between 0 and 100',
+    });
+  });
+
+  it("parses mrp, rating, and review_count", () => {
+    const result = parseCombinedRow(
+      HEADER,
+      row({
+        product_name: "Trimmer",
+        product_mrp: "1799",
+        product_rating: "4.3",
+        product_review_count: "1250",
+      }),
+    );
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.product.mrp).toBe(1799);
+      expect(result.product.rating).toBe(4.3);
+      expect(result.product.review_count).toBe(1250);
+    }
+  });
+
+  it("blank mrp/rating/review_count default to null, not 0", () => {
+    const result = parseCombinedRow(HEADER, row({ product_name: "Trimmer" }));
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.product.mrp).toBeNull();
+      expect(result.product.rating).toBeNull();
+      expect(result.product.review_count).toBeNull();
+    }
+  });
+
+  it("rejects a rating outside 0-5", () => {
+    const result = parseCombinedRow(
+      HEADER,
+      row({ product_name: "Trimmer", product_rating: "5.5" }),
+    );
+    expect(result).toEqual({
+      ok: false,
+      error: 'product_rating "5.5" must be between 0 and 5',
+    });
+  });
+
+  it("rejects a negative review_count", () => {
+    const result = parseCombinedRow(
+      HEADER,
+      row({ product_name: "Trimmer", product_review_count: "-5" }),
+    );
+    expect(result).toEqual({
+      ok: false,
+      error: 'product_review_count "-5" must be at least 0',
     });
   });
 
